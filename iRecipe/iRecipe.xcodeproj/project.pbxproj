@@ -41,6 +41,7 @@
 		C81F2A81220D94310037478A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
 		C81F2A82220D94310037478A /* ReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
 		C81F2A83220D94310037478A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
+		C81F2A86220D94930037478A /* iRecipe-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "iRecipe-Bridging-Header.h"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -82,6 +83,7 @@
 		C8070CA9220CD9BF002F518E /* iRecipe */ = {
 			isa = PBXGroup;
 			children = (
+				C81F2A86220D94930037478A /* iRecipe-Bridging-Header.h */,
 				C8070CAA220CD9BF002F518E /* AppDelegate.swift */,
 				C8070CAC220CD9BF002F518E /* ViewController.swift */,
 				C8070CAE220CD9BF002F518E /* Main.storyboard */,
@@ -395,6 +397,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pijp.iRecipe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iRecipe/iRecipe-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
@@ -413,6 +416,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pijp.iRecipe;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iRecipe/iRecipe-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 			};
