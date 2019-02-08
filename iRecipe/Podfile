@@ -1,0 +1,26 @@
+source 'https://github.com/CocoaPods/Specs.git'
+
+platform :ios, '12.0'
+use_frameworks!
+inhibit_all_warnings!
+
+#link_with 'iRecipe', 'iRecipeTests'
+
+def iRecipePods
+    #SVProgressHUD
+    pod 'SVProgressHUD', '~> 2.2.5'
+    
+    #Realm
+    pod 'RealmSwift', '~> 3.7.6'
+    
+    #Haneke
+    pod 'Haneke', '~> 1.0'
+end
+
+target 'iRecipe' do
+    iRecipePods
+end
+
+target 'iRecipeTests' do
+    iRecipePods
+end
