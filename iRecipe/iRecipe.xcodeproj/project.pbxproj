@@ -24,7 +24,7 @@
 		C81F2A9D220D96430037478A /* ResultError.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F2A90220D96430037478A /* ResultError.swift */; };
 		C81F2A9E220D96430037478A /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F2A91220D96430037478A /* EndPoint.swift */; };
 		C81F2A9F220D96430037478A /* GoalsRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F2A93220D96430037478A /* GoalsRequest.swift */; };
-		C81F2AA0220D96430037478A /* GoalResponse.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F2A96220D96430037478A /* GoalResponse.swift */; };
+		C81F2AA3220D98D00037478A /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F2AA2220D98D00037478A /* Recipe.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,7 +61,7 @@
 		C81F2A90220D96430037478A /* ResultError.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ResultError.swift; sourceTree = "<group>"; };
 		C81F2A91220D96430037478A /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		C81F2A93220D96430037478A /* GoalsRequest.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalsRequest.swift; sourceTree = "<group>"; };
-		C81F2A96220D96430037478A /* GoalResponse.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GoalResponse.swift; sourceTree = "<group>"; };
+		C81F2AA2220D98D00037478A /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -178,8 +178,8 @@
 		C81F2A92220D96430037478A /* Request */ = {
 			isa = PBXGroup;
 			children = (
-				C81F2A93220D96430037478A /* GoalsRequest.swift */,
 				C81F2A94220D96430037478A /* Data Models */,
+				C81F2A93220D96430037478A /* GoalsRequest.swift */,
 			);
 			path = Request;
 			sourceTree = "<group>";
@@ -187,17 +187,17 @@
 		C81F2A94220D96430037478A /* Data Models */ = {
 			isa = PBXGroup;
 			children = (
-				C81F2A95220D96430037478A /* Goals */,
+				C81F2AA1220D98A90037478A /* Recipe */,
 			);
 			path = "Data Models";
 			sourceTree = "<group>";
 		};
-		C81F2A95220D96430037478A /* Goals */ = {
+		C81F2AA1220D98A90037478A /* Recipe */ = {
 			isa = PBXGroup;
 			children = (
-				C81F2A96220D96430037478A /* GoalResponse.swift */,
+				C81F2AA2220D98D00037478A /* Recipe.swift */,
 			);
-			path = Goals;
+			path = Recipe;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -306,10 +306,10 @@
 				C81F2A9D220D96430037478A /* ResultError.swift in Sources */,
 				C81F2A9F220D96430037478A /* GoalsRequest.swift in Sources */,
 				C81F2A85220D94310037478A /* ReachabilityManager.swift in Sources */,
-				C81F2AA0220D96430037478A /* GoalResponse.swift in Sources */,
 				C8070CAD220CD9BF002F518E /* ViewController.swift in Sources */,
 				C81F2A84220D94310037478A /* Reachability.m in Sources */,
 				C81F2A9E220D96430037478A /* EndPoint.swift in Sources */,
+				C81F2AA3220D98D00037478A /* Recipe.swift in Sources */,
 				C81F2A98220D96430037478A /* HTTPCode.swift in Sources */,
 				C81F2A9C220D96430037478A /* RequestErrors.swift in Sources */,
 				C81F2A99220D96430037478A /* NetworkHeaders.swift in Sources */,
