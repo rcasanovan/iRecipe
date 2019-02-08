@@ -47,7 +47,7 @@ extension RecipesListInteractor {
 
 extension RecipesListInteractor: RecipesListInteractorDelegate {
     
-    func getRecipeList(search: String? = nil, completion: @escaping RecipesGetRecipesCompletionBlock) {
+    func getRecipeList(search: String?, completion: @escaping RecipesGetRecipesCompletionBlock) {
         getRecipes(search: search, page: page) { [weak self] (response) in
             guard let `self` = self else { return }
             
@@ -65,6 +65,11 @@ extension RecipesListInteractor: RecipesListInteractorDelegate {
             }
         }
         
+    }
+    
+    func clear() {
+        recipesViewModel = []
+        page = 1
     }
     
 }

@@ -18,6 +18,7 @@ class RecipesListViewController: BaseViewController {
         super.viewDidLoad()
         setupViews()
         configureNavigationBar()
+        presenter?.viewDidLoad()
     }
     
 }
@@ -64,4 +65,20 @@ extension RecipesListViewController {
 
 extension RecipesListViewController: RecipesListViewInjection {
     
+    func showProgress(_ show: Bool, status: String) {
+        showLoader(show, status: status)
+    }
+    
+    func showProgress(_ show: Bool) {
+        showLoader(show)
+    }
+    
+    func showMessageWith(title: String, message: String, actionTitle: String) {
+        showAlertWith(title: title, message: message, actionTitle: actionTitle)
+    }
+    
+    func loadRecipes(_ viewModels: [RecipeViewModel]) {
+        //__ TO DO
+        print("show recipes")
+    }
 }

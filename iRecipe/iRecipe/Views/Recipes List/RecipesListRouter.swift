@@ -12,6 +12,7 @@ class RecipesListRouter {
     
     public static func setupModule(navigationController: UINavigationController? = nil) -> RecipesListViewController {
         let recipesVC = RecipesListViewController()
+        recipesVC.presenter = RecipesListPresenter(view: recipesVC, navigationController: navigationController)
         return recipesVC
     }
     
