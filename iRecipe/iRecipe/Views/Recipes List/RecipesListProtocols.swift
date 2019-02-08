@@ -17,7 +17,10 @@ protocol RecipesListPresenterDelegate : class {
 
 // Presenter / Interactor
 
+typealias RecipesGetRecipesCompletionBlock = (_ viewModel: [RecipeViewModel]?, _ success: Bool, _ error: ResultError?) -> Void
+
 protocol RecipesListInteractorDelegate : class {
+    func getRecipeList(search: String? = nil, completion: @escaping RecipesGetRecipesCompletionBlock)
 }
 
 // Presenter / Router
