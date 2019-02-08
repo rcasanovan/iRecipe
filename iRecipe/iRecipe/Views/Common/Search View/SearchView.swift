@@ -16,6 +16,13 @@ class SearchView: UIView {
     
     public var delegate: SearchViewDelegate?
     
+    /**
+     * Get component's height
+     */
+    public var height: CGFloat {
+        return Layout.height
+    }
+    
     private let searchContainerView: UIView = UIView()
     private var searchContainerViewTrailingConstraint: NSLayoutConstraint?
     
@@ -32,13 +39,6 @@ class SearchView: UIView {
     required init?(coder aDecoder: NSCoder) {
         super.init(coder: aDecoder)
         setupViews()
-    }
-    
-    /**
-     * Get component's height
-     */
-    public func getHeight() -> CGFloat {
-        return Layout.height
     }
     
     /**
@@ -64,7 +64,7 @@ extension SearchView {
     private func configureSubviews() {
         searchContainerView.backgroundColor = .clear
         
-        searchBar.placeholder = "Search your favorites characters"
+        searchBar.placeholder = "Search your favorites recipes"
         searchBar.backgroundColor = .clear
         searchBar.barTintColor = .clear
         searchBar.delegate = self
