@@ -12,7 +12,7 @@ class MainTabBar: UITabBarController {
     
     private var tabBarConfigured: Bool = false
     
-    private let recipesViewController: UIViewController = UIViewController()
+    private let recipesViewController: RecipesListViewController = RecipesListRouter.setupModule()
     private let favoritesViewController: UIViewController = UIViewController()
     
     override func viewWillAppear(_ animated: Bool) {
