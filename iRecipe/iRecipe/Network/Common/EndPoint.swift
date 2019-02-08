@@ -16,7 +16,12 @@ protocol EndpointProtocol: RawRepresentable where RawValue == String {
  */
 private struct Url {
     
-    static let baseUrl: String = "https://thebigachallenge.appspot.com/_ah/api/myApi/v1/"
+    static let baseUrl: String = "http://www.recipepuppy.com/api/"
+    
+    struct Fields {
+        static let page: String = "p"
+        static let search: String = "q"
+    }
     
 }
 
@@ -25,12 +30,18 @@ enum Endpoint: EndpointProtocol {
     
     var rawValue: String {
         switch self {
-        case .getGoals():
-            return "goals/"
+        case .getRecipesWith(let search, let page):
+            var endpoint = "\(Url.baseUrl)?\(Url.Fields.page)=\(page)"
+            
+            if let search = search, let searchWithUrlFormat = search.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) {
+                endpoint = "\(endpoint)&\(Url.Fields.search)=\(searchWithUrlFormat)"
+            }
+            
+            return endpoint
         }
     }
     
-    case getGoals()
+    case getRecipesWith(search: String?, page: UInt)
     
 }
 
