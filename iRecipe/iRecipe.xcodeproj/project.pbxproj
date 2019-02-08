@@ -27,6 +27,7 @@
 		C81F2AA8220D9AD90037478A /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F2AA7220D9AD90037478A /* NetworkTests.swift */; };
 		C81F2AAD220D9F3A0037478A /* Recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = C81F2AAC220D9F3A0037478A /* Recipes.json */; };
 		C81F2AB1220DA48A0037478A /* RecipeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F2AB0220DA48A0037478A /* RecipeManager.swift */; };
+		C81F2AB4220DA5A90037478A /* RecipeManagerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F2AB3220DA5A90037478A /* RecipeManagerTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -66,6 +67,7 @@
 		C81F2AA7220D9AD90037478A /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		C81F2AAC220D9F3A0037478A /* Recipes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Recipes.json; sourceTree = "<group>"; };
 		C81F2AB0220DA48A0037478A /* RecipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeManager.swift; sourceTree = "<group>"; };
+		C81F2AB3220DA5A90037478A /* RecipeManagerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeManagerTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -258,6 +260,7 @@
 		C81F2AB2220DA5850037478A /* Recipe Manager */ = {
 			isa = PBXGroup;
 			children = (
+				C81F2AB3220DA5A90037478A /* RecipeManagerTests.swift */,
 			);
 			path = "Recipe Manager";
 			sourceTree = "<group>";
@@ -387,6 +390,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				C81F2AA8220D9AD90037478A /* NetworkTests.swift in Sources */,
+				C81F2AB4220DA5A90037478A /* RecipeManagerTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
