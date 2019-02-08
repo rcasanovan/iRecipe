@@ -31,7 +31,7 @@ enum ResultError: Error {
     }
     
     var isConnectionError: Bool {
-        return false // TODO:
+        return !ReachabilityManager.shared.hasConnection()
     }
     
     var httpCode: HTTPCode? {
