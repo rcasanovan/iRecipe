@@ -31,7 +31,7 @@ enum Endpoint: EndpointProtocol {
     var rawValue: String {
         switch self {
         case .getRecipesWith(let search, let page):
-            var endpoint = "\(Url.baseUrl)?\(Url.Fields.page)=\(page)"
+            var endpoint = "?\(Url.Fields.page)=\(page)"
             
             if let search = search, let searchWithUrlFormat = search.addingPercentEncoding(withAllowedCharacters: CharacterSet.urlQueryAllowed) {
                 endpoint = "\(endpoint)&\(Url.Fields.search)=\(searchWithUrlFormat)"

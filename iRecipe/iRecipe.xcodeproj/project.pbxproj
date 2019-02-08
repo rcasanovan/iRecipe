@@ -25,6 +25,7 @@
 		C81F2A9E220D96430037478A /* EndPoint.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F2A91220D96430037478A /* EndPoint.swift */; };
 		C81F2AA3220D98D00037478A /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F2AA2220D98D00037478A /* Recipe.swift */; };
 		C81F2AA5220D9A180037478A /* RecipesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F2AA4220D9A180037478A /* RecipesRequest.swift */; };
+		C81F2AA8220D9AD90037478A /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F2AA7220D9AD90037478A /* NetworkTests.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -62,6 +63,7 @@
 		C81F2A91220D96430037478A /* EndPoint.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = EndPoint.swift; sourceTree = "<group>"; };
 		C81F2AA2220D98D00037478A /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		C81F2AA4220D9A180037478A /* RecipesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesRequest.swift; sourceTree = "<group>"; };
+		C81F2AA7220D9AD90037478A /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -119,6 +121,7 @@
 		C8070CBE220CD9C1002F518E /* iRecipeTests */ = {
 			isa = PBXGroup;
 			children = (
+				C81F2AA6220D9AB70037478A /* Network */,
 				C8070CBF220CD9C1002F518E /* iRecipeTests.swift */,
 				C8070CC1220CD9C1002F518E /* Info.plist */,
 			);
@@ -198,6 +201,14 @@
 				C81F2AA2220D98D00037478A /* Recipe.swift */,
 			);
 			path = Recipe;
+			sourceTree = "<group>";
+		};
+		C81F2AA6220D9AB70037478A /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				C81F2AA7220D9AD90037478A /* NetworkTests.swift */,
+			);
+			path = Network;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -322,6 +333,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C81F2AA8220D9AD90037478A /* NetworkTests.swift in Sources */,
 				C8070CC0220CD9C1002F518E /* iRecipeTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -525,6 +537,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pijp.iRecipeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iRecipe/iRecipe-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iRecipe.app/iRecipe";
@@ -546,6 +559,7 @@
 				);
 				PRODUCT_BUNDLE_IDENTIFIER = com.pijp.iRecipeTests;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "iRecipe/iRecipe-Bridging-Header.h";
 				SWIFT_VERSION = 4.2;
 				TARGETED_DEVICE_FAMILY = "1,2";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/iRecipe.app/iRecipe";
