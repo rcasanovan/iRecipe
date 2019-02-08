@@ -13,6 +13,8 @@
 		C8070CB2220CD9C1002F518E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8070CB1220CD9C1002F518E /* Assets.xcassets */; };
 		C8070CB5220CD9C1002F518E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8070CB3220CD9C1002F518E /* LaunchScreen.storyboard */; };
 		C8070CC0220CD9C1002F518E /* iRecipeTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8070CBF220CD9C1002F518E /* iRecipeTests.swift */; };
+		C81F2A84220D94310037478A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C81F2A81220D94310037478A /* Reachability.m */; };
+		C81F2A85220D94310037478A /* ReachabilityManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F2A82220D94310037478A /* ReachabilityManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,9 @@
 		C8070CBB220CD9C1002F518E /* iRecipeTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = iRecipeTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8070CBF220CD9C1002F518E /* iRecipeTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = iRecipeTests.swift; sourceTree = "<group>"; };
 		C8070CC1220CD9C1002F518E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		C81F2A81220D94310037478A /* Reachability.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Reachability.m; sourceTree = "<group>"; };
+		C81F2A82220D94310037478A /* ReachabilityManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ReachabilityManager.swift; sourceTree = "<group>"; };
+		C81F2A83220D94310037478A /* Reachability.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Reachability.h; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +85,7 @@
 				C8070CAA220CD9BF002F518E /* AppDelegate.swift */,
 				C8070CAC220CD9BF002F518E /* ViewController.swift */,
 				C8070CAE220CD9BF002F518E /* Main.storyboard */,
+				C81F2A7F220D941C0037478A /* Managers */,
 				C8070CB1220CD9C1002F518E /* Assets.xcassets */,
 				C8070CB3220CD9C1002F518E /* LaunchScreen.storyboard */,
 				C8070CB6220CD9C1002F518E /* Info.plist */,
@@ -94,6 +100,24 @@
 				C8070CC1220CD9C1002F518E /* Info.plist */,
 			);
 			path = iRecipeTests;
+			sourceTree = "<group>";
+		};
+		C81F2A7F220D941C0037478A /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+				C81F2A80220D94310037478A /* Reachability Manager */,
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		C81F2A80220D94310037478A /* Reachability Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C81F2A83220D94310037478A /* Reachability.h */,
+				C81F2A81220D94310037478A /* Reachability.m */,
+				C81F2A82220D94310037478A /* ReachabilityManager.swift */,
+			);
+			path = "Reachability Manager";
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -197,7 +221,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C81F2A85220D94310037478A /* ReachabilityManager.swift in Sources */,
 				C8070CAD220CD9BF002F518E /* ViewController.swift in Sources */,
+				C81F2A84220D94310037478A /* Reachability.m in Sources */,
 				C8070CAB220CD9BF002F518E /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
