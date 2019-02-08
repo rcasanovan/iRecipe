@@ -10,8 +10,6 @@
 		343F2044DAD90D89DD5FCF5B /* Pods_iRecipe.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 97715F9099E73DA6A63685F0 /* Pods_iRecipe.framework */; };
 		84C9EA123510166ABA115452 /* Pods_iRecipeTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E446755234F54F6900B04C6E /* Pods_iRecipeTests.framework */; };
 		C8070CAB220CD9BF002F518E /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8070CAA220CD9BF002F518E /* AppDelegate.swift */; };
-		C8070CAD220CD9BF002F518E /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = C8070CAC220CD9BF002F518E /* ViewController.swift */; };
-		C8070CB0220CD9BF002F518E /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8070CAE220CD9BF002F518E /* Main.storyboard */; };
 		C8070CB2220CD9C1002F518E /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = C8070CB1220CD9C1002F518E /* Assets.xcassets */; };
 		C8070CB5220CD9C1002F518E /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = C8070CB3220CD9C1002F518E /* LaunchScreen.storyboard */; };
 		C81F2A84220D94310037478A /* Reachability.m in Sources */ = {isa = PBXBuildFile; fileRef = C81F2A81220D94310037478A /* Reachability.m */; };
@@ -61,8 +59,6 @@
 		97715F9099E73DA6A63685F0 /* Pods_iRecipe.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iRecipe.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8070CA7220CD9BF002F518E /* iRecipe.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = iRecipe.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		C8070CAA220CD9BF002F518E /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
-		C8070CAC220CD9BF002F518E /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		C8070CAF220CD9BF002F518E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		C8070CB1220CD9C1002F518E /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		C8070CB4220CD9C1002F518E /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		C8070CB6220CD9C1002F518E /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -294,8 +290,6 @@
 			children = (
 				C81F2AC3220DBAD90037478A /* Base */,
 				C81F2AC6220DBB680037478A /* Main TabBar */,
-				C8070CAC220CD9BF002F518E /* ViewController.swift */,
-				C8070CAE220CD9BF002F518E /* Main.storyboard */,
 			);
 			path = Views;
 			sourceTree = "<group>";
@@ -476,7 +470,6 @@
 				C81F2ADB220DBD430037478A /* InterUI-MediumItalic.ttf in Resources */,
 				C81F2ADF220DBD430037478A /* InterUI-Regular.ttf in Resources */,
 				C8070CB2220CD9C1002F518E /* Assets.xcassets in Resources */,
-				C8070CB0220CD9BF002F518E /* Main.storyboard in Resources */,
 				C81F2AAD220D9F3A0037478A /* Recipes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -602,7 +595,6 @@
 				C81F2A97220D96430037478A /* RequestManager.swift in Sources */,
 				C81F2A9D220D96430037478A /* ResultError.swift in Sources */,
 				C81F2A85220D94310037478A /* ReachabilityManager.swift in Sources */,
-				C8070CAD220CD9BF002F518E /* ViewController.swift in Sources */,
 				C81F2A84220D94310037478A /* Reachability.m in Sources */,
 				C81F2AB1220DA48A0037478A /* RecipeManager.swift in Sources */,
 				C81F2A9E220D96430037478A /* EndPoint.swift in Sources */,
@@ -640,14 +632,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		C8070CAE220CD9BF002F518E /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				C8070CAF220CD9BF002F518E /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		C8070CB3220CD9C1002F518E /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
