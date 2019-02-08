@@ -52,5 +52,26 @@ class NetworkTests: XCTestCase {
         
         self.waitForExpectations(timeout: 25.0, handler: nil)
     }
+    
+    func testRecipesNoSearchResults() {
+        let recipesResultsExpectation: XCTestExpectation = self.expectation(description: "recipesResultsExpectation")
+        
+        testRecipesResultsWith(page: 1){ (response) in
+            switch response {
+            case .success(let response):
+                guard let response = response else {
+                    XCTFail("Impossible to get the response")
+                    return
+                }
+                XCTAssert(response.results.count != 0, "data array can't be empty")
+            case .failure(let error):
+                XCTFail(error.localizedDescription)
+            }
+            
+            recipesResultsExpectation.fulfill()
+        }
+        
+        self.waitForExpectations(timeout: 25.0, handler: nil)
+    }
 
 }

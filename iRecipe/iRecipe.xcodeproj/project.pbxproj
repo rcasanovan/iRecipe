@@ -26,6 +26,7 @@
 		C81F2AA3220D98D00037478A /* Recipe.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F2AA2220D98D00037478A /* Recipe.swift */; };
 		C81F2AA5220D9A180037478A /* RecipesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F2AA4220D9A180037478A /* RecipesRequest.swift */; };
 		C81F2AA8220D9AD90037478A /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F2AA7220D9AD90037478A /* NetworkTests.swift */; };
+		C81F2AAD220D9F3A0037478A /* Recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = C81F2AAC220D9F3A0037478A /* Recipes.json */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		C81F2AA2220D98D00037478A /* Recipe.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Recipe.swift; sourceTree = "<group>"; };
 		C81F2AA4220D9A180037478A /* RecipesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesRequest.swift; sourceTree = "<group>"; };
 		C81F2AA7220D9AD90037478A /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
+		C81F2AAC220D9F3A0037478A /* Recipes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Recipes.json; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -111,6 +113,7 @@
 				C8070CAE220CD9BF002F518E /* Main.storyboard */,
 				C81F2A87220D96430037478A /* Network */,
 				C81F2A7F220D941C0037478A /* Managers */,
+				C81F2AA9220D9F090037478A /* Resources */,
 				C8070CB1220CD9C1002F518E /* Assets.xcassets */,
 				C8070CB3220CD9C1002F518E /* LaunchScreen.storyboard */,
 				C8070CB6220CD9C1002F518E /* Info.plist */,
@@ -211,6 +214,30 @@
 			path = Network;
 			sourceTree = "<group>";
 		};
+		C81F2AA9220D9F090037478A /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				C81F2AAA220D9F180037478A /* Simulated Response */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		C81F2AAA220D9F180037478A /* Simulated Response */ = {
+			isa = PBXGroup;
+			children = (
+				C81F2AAB220D9F1D0037478A /* Recipes */,
+			);
+			path = "Simulated Response";
+			sourceTree = "<group>";
+		};
+		C81F2AAB220D9F1D0037478A /* Recipes */ = {
+			isa = PBXGroup;
+			children = (
+				C81F2AAC220D9F3A0037478A /* Recipes.json */,
+			);
+			path = Recipes;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -295,6 +322,7 @@
 				C8070CB5220CD9C1002F518E /* LaunchScreen.storyboard in Resources */,
 				C8070CB2220CD9C1002F518E /* Assets.xcassets in Resources */,
 				C8070CB0220CD9BF002F518E /* Main.storyboard in Resources */,
+				C81F2AAD220D9F3A0037478A /* Recipes.json in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
