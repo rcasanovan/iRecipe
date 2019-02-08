@@ -26,6 +26,7 @@
 		C81F2AA5220D9A180037478A /* RecipesRequest.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F2AA4220D9A180037478A /* RecipesRequest.swift */; };
 		C81F2AA8220D9AD90037478A /* NetworkTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F2AA7220D9AD90037478A /* NetworkTests.swift */; };
 		C81F2AAD220D9F3A0037478A /* Recipes.json in Resources */ = {isa = PBXBuildFile; fileRef = C81F2AAC220D9F3A0037478A /* Recipes.json */; };
+		C81F2AB1220DA48A0037478A /* RecipeManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F2AB0220DA48A0037478A /* RecipeManager.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -64,6 +65,7 @@
 		C81F2AA4220D9A180037478A /* RecipesRequest.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipesRequest.swift; sourceTree = "<group>"; };
 		C81F2AA7220D9AD90037478A /* NetworkTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkTests.swift; sourceTree = "<group>"; };
 		C81F2AAC220D9F3A0037478A /* Recipes.json */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.json; path = Recipes.json; sourceTree = "<group>"; };
+		C81F2AB0220DA48A0037478A /* RecipeManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeManager.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -121,6 +123,7 @@
 		C8070CBE220CD9C1002F518E /* iRecipeTests */ = {
 			isa = PBXGroup;
 			children = (
+				C81F2AB2220DA5850037478A /* Recipe Manager */,
 				C81F2AA6220D9AB70037478A /* Network */,
 				C8070CC1220CD9C1002F518E /* Info.plist */,
 			);
@@ -130,6 +133,7 @@
 		C81F2A7F220D941C0037478A /* Managers */ = {
 			isa = PBXGroup;
 			children = (
+				C81F2AAF220DA4760037478A /* Recipe Manager */,
 				C81F2A80220D94310037478A /* Reachability Manager */,
 			);
 			path = Managers;
@@ -243,6 +247,21 @@
 			path = Views;
 			sourceTree = "<group>";
 		};
+		C81F2AAF220DA4760037478A /* Recipe Manager */ = {
+			isa = PBXGroup;
+			children = (
+				C81F2AB0220DA48A0037478A /* RecipeManager.swift */,
+			);
+			path = "Recipe Manager";
+			sourceTree = "<group>";
+		};
+		C81F2AB2220DA5850037478A /* Recipe Manager */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = "Recipe Manager";
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -351,6 +370,7 @@
 				C81F2A85220D94310037478A /* ReachabilityManager.swift in Sources */,
 				C8070CAD220CD9BF002F518E /* ViewController.swift in Sources */,
 				C81F2A84220D94310037478A /* Reachability.m in Sources */,
+				C81F2AB1220DA48A0037478A /* RecipeManager.swift in Sources */,
 				C81F2A9E220D96430037478A /* EndPoint.swift in Sources */,
 				C81F2AA3220D98D00037478A /* Recipe.swift in Sources */,
 				C81F2A98220D96430037478A /* HTTPCode.swift in Sources */,
