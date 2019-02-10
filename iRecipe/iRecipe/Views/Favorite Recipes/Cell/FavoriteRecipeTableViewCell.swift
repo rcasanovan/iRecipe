@@ -15,6 +15,8 @@ class FavoriteRecipeTableViewCell: UITableViewCell {
     }
     
     @IBOutlet private weak var recipeImageView: UIImageView!
+    @IBOutlet private weak var recipeTitleLabel: UILabel!
+    @IBOutlet private weak var recipeIngredientsLabel: UILabel!
     
     private var viewModel: RecipeViewModel?
     private var index: Int?
@@ -26,6 +28,13 @@ class FavoriteRecipeTableViewCell: UITableViewCell {
 
     override func setSelected(_ selected: Bool, animated: Bool) {
         super.setSelected(selected, animated: animated)
+    }
+    
+    override func prepareForReuse() {
+        super.prepareForReuse()
+        recipeImageView.image = nil
+        recipeTitleLabel.text = ""
+        recipeIngredientsLabel.text = ""
     }
     
     public func bindWithViewModel(_ viewModel: RecipeViewModel, at index: Int) {
@@ -43,7 +52,6 @@ extension FavoriteRecipeTableViewCell {
      * SetupViews
      */
     private func setupViews() {
-        contentView.translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .clear
         selectionStyle = .none
         configureSubviews()
@@ -53,6 +61,12 @@ extension FavoriteRecipeTableViewCell {
      * ConfigureSubviews
      */
     private func configureSubviews() {
+        recipeTitleLabel.textColor = .white()
+        recipeTitleLabel.font = UIFont.blackWithSize(size: 15.0)
+        
+        recipeIngredientsLabel.textColor = .white()
+        recipeIngredientsLabel.font = UIFont.mediumWithSize(size: 14.0)
+        recipeIngredientsLabel.adjustsFontSizeToFitWidth = true
     }
     
 }
@@ -60,6 +74,9 @@ extension FavoriteRecipeTableViewCell {
 extension FavoriteRecipeTableViewCell {
     
     private func configureRecipe() {
+        recipeTitleLabel.text = viewModel?.title
+        recipeIngredientsLabel.text = viewModel?.ingredients
+        recipeIngredientsLabel.numberOfLines = 0
         configureRecipeImageWithUrl(viewModel?.recipeUrl)
     }
     
