@@ -61,6 +61,11 @@ extension FavoriteRecipeTableViewCell {
      * ConfigureSubviews
      */
     private func configureSubviews() {
+        recipeImageView.layer.cornerRadius = 10.0
+        recipeImageView.layer.borderColor = UIColor.white().cgColor
+        recipeImageView.layer.borderWidth = 2.0
+        recipeImageView.clipsToBounds = true
+        
         recipeTitleLabel.textColor = .white()
         recipeTitleLabel.font = UIFont.blackWithSize(size: 15.0)
         
