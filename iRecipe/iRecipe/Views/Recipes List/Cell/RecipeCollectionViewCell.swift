@@ -24,6 +24,8 @@ class RecipeCollectionViewCell: UICollectionViewCell {
     }
     
     @IBOutlet private weak var recipeContainerView: UIView!
+    @IBOutlet private weak var recipeImageBackgroundView: UIImageView!
+    @IBOutlet private weak var recipeEffectView: UIVisualEffectView!
     @IBOutlet private weak var recipeImageView: UIImageView!
     @IBOutlet private weak var recipeTitleLabel: UILabel!
     @IBOutlet private weak var recipeIngredientsLabel: UILabel!
@@ -47,6 +49,7 @@ class RecipeCollectionViewCell: UICollectionViewCell {
     
     override func prepareForReuse() {
         super.prepareForReuse()
+        recipeImageBackgroundView.image = nil
         recipeImageView.image = nil
         recipeTitleLabel.text = ""
         recipeIngredientsLabel.text = ""
@@ -83,6 +86,8 @@ extension RecipeCollectionViewCell {
      */
     private func configureSubviews() {
         recipeContainerView.backgroundColor = .gray()
+        
+        recipeEffectView.effect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         
         recipeTitleLabel.textColor = .white()
         recipeTitleLabel.font = UIFont.blackWithSize(size: 14.0)
@@ -126,8 +131,9 @@ extension RecipeCollectionViewCell {
         guard let url = url else {
             return
         }
-        recipeImageView.contentMode = .scaleAspectFill
-        recipeImageView.clipsToBounds = true
+        recipeImageBackgroundView.contentMode = .scaleAspectFill
+        recipeImageBackgroundView.clipsToBounds = true
+        recipeImageBackgroundView.hnk_setImage(from: url, placeholder: nil)
         recipeImageView.hnk_setImage(from: url, placeholder: nil)
     }
     
