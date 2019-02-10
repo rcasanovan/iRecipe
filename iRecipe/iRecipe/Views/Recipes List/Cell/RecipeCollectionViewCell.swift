@@ -21,6 +21,7 @@ class RecipeCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var recipeImageView: UIImageView!
     @IBOutlet private weak var recipeTitleLabel: UILabel!
     @IBOutlet private weak var recipeIngredientsLabel: UILabel!
+    @IBOutlet private weak var makeFavoriteButton: UIButton!
     
     lazy private var width: NSLayoutConstraint = {
         let width = contentView.widthAnchor.constraint(equalToConstant: bounds.size.width)
@@ -78,6 +79,15 @@ extension RecipeCollectionViewCell {
         
         recipeIngredientsLabel.textColor = .white()
         recipeIngredientsLabel.font = UIFont.blackWithSize(size: 14.0)
+        
+        makeFavoriteButton.backgroundColor = .green()
+        makeFavoriteButton.titleLabel?.font = UIFont.blackWithSize(size: 14.0)
+        makeFavoriteButton.setTitleColor(.white(), for: .normal)
+        makeFavoriteButton.layer.cornerRadius = makeFavoriteButton.frame.height / 2
+        makeFavoriteButton.layer.borderColor = UIColor.white().cgColor
+        makeFavoriteButton.layer.borderWidth = 2.0
+        makeFavoriteButton.clipsToBounds = true
+        makeFavoriteButton.setTitle("Make favorite", for: .normal)
     }
     
 }

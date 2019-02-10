@@ -29,7 +29,7 @@
                                 </constraints>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OI3-RA-uCg">
-                                <rect key="frame" x="8" y="148" width="176" height="21"/>
+                                <rect key="frame" x="8" y="148" width="166" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="PBt-J8-aRQ"/>
                                 </constraints>
@@ -38,15 +38,15 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rLz-bi-GBU">
-                                <rect key="frame" x="192" y="148" width="100" height="30"/>
+                                <rect key="frame" x="182" y="148" width="110" height="40"/>
                                 <constraints>
-                                    <constraint firstAttribute="width" constant="100" id="kvg-eS-KbZ"/>
-                                    <constraint firstAttribute="height" constant="30" id="loG-OY-XJP"/>
+                                    <constraint firstAttribute="width" constant="110" id="kvg-eS-KbZ"/>
+                                    <constraint firstAttribute="height" constant="40" id="loG-OY-XJP"/>
                                 </constraints>
                                 <state key="normal" title="Button"/>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hhk-JH-jY8">
-                                <rect key="frame" x="8" y="177" width="176" height="21"/>
+                                <rect key="frame" x="8" y="177" width="166" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="250" constant="21" id="0I1-nx-oQg"/>
                                 </constraints>
@@ -83,6 +83,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
+                <outlet property="makeFavoriteButton" destination="rLz-bi-GBU" id="yyg-co-q3q"/>
                 <outlet property="recipeContainerView" destination="mTT-DM-RDK" id="8z3-n6-xLN"/>
                 <outlet property="recipeImageView" destination="NTq-me-RUg" id="0os-zZ-7aQ"/>
                 <outlet property="recipeIngredientsLabel" destination="Hhk-JH-jY8" id="rEe-as-rVb"/>
