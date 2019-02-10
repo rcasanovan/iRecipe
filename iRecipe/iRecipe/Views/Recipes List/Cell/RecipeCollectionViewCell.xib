@@ -63,6 +63,7 @@
                             <constraint firstItem="NTq-me-RUg" firstAttribute="top" secondItem="mTT-DM-RDK" secondAttribute="top" id="AjQ-Dn-QaD"/>
                             <constraint firstItem="NTq-me-RUg" firstAttribute="leading" secondItem="mTT-DM-RDK" secondAttribute="leading" id="Buc-IU-Imj"/>
                             <constraint firstAttribute="trailing" secondItem="NTq-me-RUg" secondAttribute="trailing" id="ChJ-Fk-ZEC"/>
+                            <constraint firstAttribute="bottom" secondItem="Hhk-JH-jY8" secondAttribute="bottom" constant="32" id="Kx7-sY-pd0"/>
                             <constraint firstAttribute="trailing" secondItem="rLz-bi-GBU" secondAttribute="trailing" constant="8" id="Oq5-HX-K01"/>
                             <constraint firstItem="rLz-bi-GBU" firstAttribute="top" secondItem="NTq-me-RUg" secondAttribute="bottom" constant="8" id="U6S-Im-XID"/>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="250" constant="300" id="f4X-Cg-EPI"/>

@@ -46,6 +46,7 @@ extension RecipesListViewController {
     private func configureSubviews() {
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
+        flowLayout.estimatedItemSize = CGSize(width: getPostCellSide(), height: 320.0)
         recipesListCollectionView = UICollectionView(frame: recipesListContainerView.bounds, collectionViewLayout: flowLayout)
         recipesListCollectionView?.backgroundColor = .clear
         recipesListCollectionView?.isUserInteractionEnabled = true
@@ -53,6 +54,8 @@ extension RecipesListViewController {
         recipesListCollectionView?.delegate = self
         registerCells()
         setupDatasource()
+        
+        searchView.delegate = self
     }
     
     private func configureNavigationBar() {
@@ -119,12 +122,6 @@ extension RecipesListViewController {
 // MARK:- UICollectionViewDelegate (with UICollectionViewDelegateFlowLayout)
 extension RecipesListViewController: UICollectionViewDelegateFlowLayout, UICollectionViewDelegate {
     
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
-        let side = getPostCellSide()
-
-        return CGSize(width: side, height: 230.0)
-    }
-    
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: Layout.CollectionViewCell.edgeSpacingTop, left: Layout.CollectionViewCell.edgeSpacingLeft, bottom: Layout.CollectionViewCell.edgeSpacingBottom, right: Layout.CollectionViewCell.edgeSpacingRight)
     }
@@ -141,6 +138,13 @@ extension RecipesListViewController: UICollectionViewDelegateFlowLayout, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+    }
+    
+}
+
+extension RecipesListViewController: SearchViewDelegate {
+    
+    func searchButtonPressedWithSearch(_ search: String?) {
     }
     
 }

@@ -22,6 +22,12 @@ class RecipeCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var recipeTitleLabel: UILabel!
     @IBOutlet private weak var recipeIngredientsLabel: UILabel!
     
+    lazy private var width: NSLayoutConstraint = {
+        let width = contentView.widthAnchor.constraint(equalToConstant: bounds.size.width)
+        width.isActive = true
+        return width
+    }()
+    
     private var viewModel: RecipeViewModel?
     
     
@@ -33,6 +39,13 @@ class RecipeCollectionViewCell: UICollectionViewCell {
     override func prepareForReuse() {
         super.prepareForReuse()
         recipeImageView.image = nil
+        recipeTitleLabel.text = ""
+        recipeIngredientsLabel.text = ""
+    }
+    
+    override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
+        width.constant = bounds.size.width
+        return contentView.systemLayoutSizeFitting(CGSize(width: targetSize.width, height: 1))
     }
     
     public func bindWithViewModel(_ viewModel: RecipeViewModel) {
@@ -42,12 +55,14 @@ class RecipeCollectionViewCell: UICollectionViewCell {
 
 }
 
+// MARK: - Setup views
 extension RecipeCollectionViewCell {
     
     /**
      * SetupViews
      */
     private func setupViews() {
+        contentView.translatesAutoresizingMaskIntoConstraints = false
         backgroundColor = .clear
         configureSubviews()
     }
@@ -72,6 +87,8 @@ extension RecipeCollectionViewCell {
     private func configureRecipe() {
         recipeTitleLabel.text = viewModel?.title
         recipeIngredientsLabel.text = viewModel?.ingredients
+        recipeIngredientsLabel.numberOfLines = 0
+        recipeIngredientsLabel.sizeToFit()
         configureRecipeImageWithUrl(viewModel?.recipeUrl)
     }
     
