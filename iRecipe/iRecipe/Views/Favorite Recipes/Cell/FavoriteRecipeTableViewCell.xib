@@ -44,10 +44,22 @@
                         <nil key="textColor"/>
                         <nil key="highlightedColor"/>
                     </label>
+                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Has laactose" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w1F-ep-a2O">
+                        <rect key="frame" x="-31" y="23" width="120" height="20"/>
+                        <constraints>
+                            <constraint firstAttribute="height" constant="20" id="6qc-D9-XZ3"/>
+                            <constraint firstAttribute="width" constant="120" id="cSm-Sk-kT1"/>
+                        </constraints>
+                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                        <nil key="textColor"/>
+                        <nil key="highlightedColor"/>
+                    </label>
                 </subviews>
                 <constraints>
                     <constraint firstItem="RJh-2p-daB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="1GV-Lo-OOC"/>
                     <constraint firstItem="Ln8-jV-hMl" firstAttribute="top" secondItem="hH5-9x-gP5" secondAttribute="bottom" constant="8" id="4ag-hR-O2N"/>
+                    <constraint firstItem="w1F-ep-a2O" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leadingMargin" constant="-47" id="AQY-f0-zNG"/>
+                    <constraint firstItem="w1F-ep-a2O" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="12" id="Aek-kA-zr6"/>
                     <constraint firstItem="hH5-9x-gP5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="EbQ-YC-tmt"/>
                     <constraint firstItem="Ln8-jV-hMl" firstAttribute="leading" secondItem="RJh-2p-daB" secondAttribute="trailing" constant="15" id="FOf-3G-tF5"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Ln8-jV-hMl" secondAttribute="trailing" constant="15" id="Tmo-9i-T4H"/>
@@ -59,6 +71,7 @@
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
             <connections>
+                <outlet property="hasLactoseLabel" destination="w1F-ep-a2O" id="gfS-Vw-waM"/>
                 <outlet property="recipeImageView" destination="RJh-2p-daB" id="gGr-sU-VqO"/>
                 <outlet property="recipeIngredientsLabel" destination="Ln8-jV-hMl" id="eYK-pd-q8l"/>
                 <outlet property="recipeTitleLabel" destination="hH5-9x-gP5" id="fbc-Zj-sJ5"/>

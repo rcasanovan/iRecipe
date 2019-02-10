@@ -17,6 +17,7 @@ class FavoriteRecipeTableViewCell: UITableViewCell {
     @IBOutlet private weak var recipeImageView: UIImageView!
     @IBOutlet private weak var recipeTitleLabel: UILabel!
     @IBOutlet private weak var recipeIngredientsLabel: UILabel!
+    @IBOutlet private weak var hasLactoseLabel: UILabel!
     
     private var viewModel: RecipeViewModel?
     private var index: Int?
@@ -71,6 +72,12 @@ extension FavoriteRecipeTableViewCell {
         
         recipeIngredientsLabel.textColor = .white()
         recipeIngredientsLabel.font = UIFont.mediumWithSize(size: 14.0)
+        
+        hasLactoseLabel.text = "Has lactose"
+        hasLactoseLabel.backgroundColor = .yellow
+        hasLactoseLabel.font = UIFont.mediumWithSize(size: 14.0)
+        hasLactoseLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 4.0)
+        hasLactoseLabel.clipsToBounds = true
     }
     
 }

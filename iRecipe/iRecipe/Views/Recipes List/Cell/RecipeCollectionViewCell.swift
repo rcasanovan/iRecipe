@@ -52,6 +52,7 @@ class RecipeCollectionViewCell: UICollectionViewCell {
         super.prepareForReuse()
         recipeImageBackgroundView.image = nil
         recipeImageView.image = nil
+        recipeImageView.isHidden = false
         recipeTitleLabel.text = ""
         recipeIngredientsLabel.text = ""
         hasLactoseLabel.isHidden = true
@@ -142,6 +143,7 @@ extension RecipeCollectionViewCell {
     private func configureRecipeImageWithUrl(_ url: URL?) {
         guard let url = url else {
             noRecipeImageLabel.isHidden = false
+            recipeImageView.isHidden = true
             return
         }
         recipeImageBackgroundView.contentMode = .scaleAspectFill
