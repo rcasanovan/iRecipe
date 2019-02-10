@@ -21,19 +21,22 @@
                 <subviews>
                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="RJh-2p-daB">
                         <rect key="frame" x="15" y="15" width="70" height="70"/>
-                        <color key="backgroundColor" red="0.91790798829999998" green="1" blue="0.2204472116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
+                            <constraint firstAttribute="height" constant="70" id="FUo-zw-J3K"/>
                             <constraint firstAttribute="width" constant="70" id="lgd-k3-7fH"/>
-                            <constraint firstAttribute="height" constant="70" id="peR-9z-omK"/>
                         </constraints>
                     </imageView>
                 </subviews>
                 <constraints>
+                    <constraint firstAttribute="bottom" secondItem="RJh-2p-daB" secondAttribute="bottom" constant="14.5" id="CrI-ln-OTx"/>
                     <constraint firstItem="RJh-2p-daB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="top" constant="15" id="RrS-6C-6Kr"/>
                     <constraint firstItem="RJh-2p-daB" firstAttribute="leading" secondItem="H2p-sc-9uM" secondAttribute="leading" constant="15" id="tnR-kI-E7e"/>
                 </constraints>
             </tableViewCellContentView>
             <viewLayoutGuide key="safeArea" id="njF-e1-oar"/>
+            <connections>
+                <outlet property="recipeImageView" destination="RJh-2p-daB" id="gGr-sU-VqO"/>
+            </connections>
             <point key="canvasLocation" x="52.799999999999997" y="48.575712143928037"/>
         </tableViewCell>
     </objects>

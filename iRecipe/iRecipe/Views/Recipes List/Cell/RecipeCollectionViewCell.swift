@@ -142,6 +142,8 @@ extension RecipeCollectionViewCell {
         recipeImageBackgroundView.contentMode = .scaleAspectFill
         recipeImageBackgroundView.clipsToBounds = true
         recipeImageBackgroundView.hnk_setImage(from: url, placeholder: nil)
+        recipeImageView.contentMode = .scaleAspectFill
+        recipeImageView.clipsToBounds = true
         recipeImageView.hnk_setImage(from: url, placeholder: nil)
     }
     
