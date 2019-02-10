@@ -22,6 +22,7 @@ class FavoriteRecipesViewController: BaseViewController {
         super.viewDidLoad()
         setupViews()
         configureNavigationBar()
+        presenter?.viewDidLoad()
     }
     
 }
@@ -115,5 +116,11 @@ extension FavoriteRecipesViewController {
 }
 
 extension FavoriteRecipesViewController: FavoriteRecipesViewInjection {
+    
+    func loadRecipes(_ viewModels: [RecipeViewModel]) {
+        refreshControl.endRefreshing()
+        datasource?.favoriteRecipes = viewModels
+        favoriteRecipesTableView?.reloadData()
+    }
     
 }

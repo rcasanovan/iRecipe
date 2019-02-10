@@ -10,9 +10,11 @@ import Foundation
 
 // View / Presenter
 protocol FavoriteRecipesViewInjection : class {
+    func loadRecipes(_ viewModels: [RecipeViewModel])
 }
 
 protocol FavoriteRecipesPresenterDelegate : class {
+    func viewDidLoad()
 }
 
 // Presenter / Interactor

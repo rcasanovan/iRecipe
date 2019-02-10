@@ -14,4 +14,9 @@ class FavoriteRecipesInteractor {
 
 extension FavoriteRecipesInteractor: FavoriteRecipesInteractorDelegate {
     
+    func getFavoriteRecipes() -> [RecipeViewModel] {
+        let favoriteRecipes = FavoriteRecipeManager.shared.getAll()
+        return RecipeViewModel.getFavoriteRecipesViewModelsWith(favoriteRecipes)
+    }
+    
 }

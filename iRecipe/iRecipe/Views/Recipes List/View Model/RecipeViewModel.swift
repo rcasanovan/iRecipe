@@ -37,4 +37,17 @@ struct RecipeViewModel {
         return RecipeViewModel(title: recipeResponse.title, ingredients: recipeResponse.ingredients, recipeUrl: recipeUrl, href: href, hasLactose: hasLactose)
     }
     
+    public static func getFavoriteRecipesViewModelsWith(_ recipes: [FavoriteRecipe]) -> [RecipeViewModel] {
+        return recipes.map { getFavoriteRecipeViewModelWith($0) }
+    }
+    
+    private static func getFavoriteRecipeViewModelWith(_ recipe: FavoriteRecipe) -> RecipeViewModel {
+        
+        let hasLactose = RecipeManager.shared.containsLactoseWith(recipe.ingredients)
+        let recipeUrl = URL(string: recipe.thumbnail)
+        let href = URL(string: recipe.href)
+        
+        return RecipeViewModel(title: recipe.title, ingredients: recipe.ingredients, recipeUrl: recipeUrl, href: href, hasLactose: hasLactose)
+    }
+    
 }

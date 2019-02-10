@@ -23,6 +23,19 @@ class FavoriteRecipesPresenter {
     
 }
 
+extension FavoriteRecipesPresenter {
+    
+    private func getFavoriteRecipes() {
+        let favoriteRecipes = interactor.getFavoriteRecipes()
+        view?.loadRecipes(favoriteRecipes)
+    }
+    
+}
+
 extension FavoriteRecipesPresenter: FavoriteRecipesPresenterDelegate {
+    
+    func viewDidLoad() {
+        getFavoriteRecipes()
+    }
     
 }
