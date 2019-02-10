@@ -12,11 +12,13 @@ class RecipesListPresenter {
     
     private weak var view: RecipesListViewInjection?
     private let interactor: RecipesListInteractorDelegate
+    private let router: RecipesListRouterDelegate
     
     // MARK - Lifecycle
     init(view: RecipesListViewInjection, navigationController: UINavigationController? = nil) {
         self.view = view
         self.interactor = RecipesListInteractor()
+        self.router = RecipesListRouter(navigationController: navigationController)
     }
     
 }
@@ -55,6 +57,19 @@ extension RecipesListPresenter: RecipesListPresenterDelegate {
     func viewDidLoad() {
         interactor.clear()
         getRecipes()
+    }
+    
+    func searchRecipe(_ recipe: String?) {
+        interactor.clear()
+        getRecipes(recipe)
+    }
+    
+    func recipeSelectedAt(_ index: Int) {
+        guard let recipeSelected = interactor.getRecipeSelectedAt(index), let url = recipeSelected.href else {
+            return
+        }
+        
+        router.showRecipeDetailWithUrl(url)
     }
     
 }

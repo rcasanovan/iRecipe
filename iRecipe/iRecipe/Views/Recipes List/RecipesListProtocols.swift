@@ -18,6 +18,8 @@ protocol RecipesListViewInjection : class {
 
 protocol RecipesListPresenterDelegate : class {
     func viewDidLoad()
+    func searchRecipe(_ recipe: String?)
+    func recipeSelectedAt(_ index: Int)
 }
 
 // Presenter / Interactor
@@ -27,8 +29,10 @@ typealias RecipesGetRecipesCompletionBlock = (_ viewModel: [RecipeViewModel]?, _
 protocol RecipesListInteractorDelegate : class {
     func getRecipeList(search: String?, completion: @escaping RecipesGetRecipesCompletionBlock)
     func clear()
+    func getRecipeSelectedAt(_ index: Int) -> RecipeViewModel?
 }
 
 // Presenter / Router
 protocol RecipesListRouterDelegate : class {
+    func showRecipeDetailWithUrl(_ url: URL)
 }

@@ -72,4 +72,9 @@ extension RecipesListInteractor: RecipesListInteractorDelegate {
         page = 1
     }
     
+    func getRecipeSelectedAt(_ index: Int) -> RecipeViewModel? {
+        if !recipesViewModel.indices.contains(index) { return nil }
+        return recipesViewModel[index]
+    }
+    
 }

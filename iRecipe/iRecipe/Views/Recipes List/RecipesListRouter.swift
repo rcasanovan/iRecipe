@@ -7,13 +7,30 @@
 //
 
 import UIKit
+import SafariServices
 
 class RecipesListRouter {
     
-    public static func setupModule(navigationController: UINavigationController? = nil) -> RecipesListViewController {
+    private weak var navigationController: UINavigationController?
+    
+    init(navigationController: UINavigationController? = nil) {
+        self.navigationController = navigationController
+    }
+    
+    public static func setupModule() -> UINavigationController {
         let recipesVC = RecipesListViewController()
-        recipesVC.presenter = RecipesListPresenter(view: recipesVC, navigationController: navigationController)
-        return recipesVC
+        let recipesNVC = UINavigationController(rootViewController: recipesVC)
+        recipesVC.presenter = RecipesListPresenter(view: recipesVC, navigationController: recipesNVC)
+        return recipesNVC
+    }
+    
+}
+
+extension RecipesListRouter: RecipesListRouterDelegate {
+    
+    func showRecipeDetailWithUrl(_ url: URL) {
+        let safariVC = SFSafariViewController(url: url)
+        navigationController?.present(safariVC, animated: true, completion: nil)
     }
     
 }

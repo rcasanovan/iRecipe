@@ -138,6 +138,7 @@ extension RecipesListViewController: UICollectionViewDelegateFlowLayout, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
+        presenter?.recipeSelectedAt(indexPath.row)
     }
     
 }
@@ -145,6 +146,7 @@ extension RecipesListViewController: UICollectionViewDelegateFlowLayout, UIColle
 extension RecipesListViewController: SearchViewDelegate {
     
     func searchButtonPressedWithSearch(_ search: String?) {
+        presenter?.searchRecipe(search)
     }
     
 }

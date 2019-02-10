@@ -13,10 +13,10 @@ struct RecipeViewModel {
     let title: String
     let ingredients: String
     let recipeUrl: URL?
-    let href: String
+    let href: URL?
     let hasLactose: Bool
     
-    init(title: String, ingredients: String, recipeUrl: URL?, href: String, hasLactose: Bool) {
+    init(title: String, ingredients: String, recipeUrl: URL?, href: URL?, hasLactose: Bool) {
         self.title = title
         self.ingredients = ingredients
         self.recipeUrl = recipeUrl
@@ -32,8 +32,9 @@ struct RecipeViewModel {
         
         let hasLactose = RecipeManager.shared.containsLactoseWith(recipeResponse.ingredients)
         let recipeUrl = URL(string: recipeResponse.thumbnail)
+        let href = URL(string: recipeResponse.href)
         
-        return RecipeViewModel(title: recipeResponse.title, ingredients: recipeResponse.ingredients, recipeUrl: recipeUrl, href: recipeResponse.href, hasLactose: hasLactose)
+        return RecipeViewModel(title: recipeResponse.title, ingredients: recipeResponse.ingredients, recipeUrl: recipeUrl, href: href, hasLactose: hasLactose)
     }
     
 }
