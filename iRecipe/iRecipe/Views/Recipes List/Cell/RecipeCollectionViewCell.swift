@@ -113,7 +113,7 @@ extension RecipeCollectionViewCell {
         hasLactoseLabel.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 4.0)
         hasLactoseLabel.isHidden = true
         
-        noRecipeImageLabel.text = "No image available"
+        noRecipeImageLabel.text = "Image not available"
         noRecipeImageLabel.textColor = .white()
         noRecipeImageLabel.font = UIFont.mediumWithSize(size: 17.0)
         noRecipeImageLabel.isHidden = true
