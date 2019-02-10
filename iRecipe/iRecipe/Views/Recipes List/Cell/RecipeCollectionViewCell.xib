@@ -43,6 +43,15 @@
                                             <constraint firstAttribute="height" constant="140" id="lGJ-Ue-J1Z"/>
                                         </constraints>
                                     </imageView>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="No image available" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6od-r8-riI">
+                                        <rect key="frame" x="16" y="60" width="268" height="20"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="20" id="6hH-bE-yUR"/>
+                                        </constraints>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <nil key="textColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
                                 </subviews>
                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                                 <constraints>
@@ -50,14 +59,18 @@
                                     <constraint firstAttribute="trailing" secondItem="xNI-nt-UvJ" secondAttribute="trailing" id="Ab7-JX-6GM"/>
                                     <constraint firstItem="NTq-me-RUg" firstAttribute="top" secondItem="3uY-Kj-vUm" secondAttribute="top" id="HPj-gm-Aan"/>
                                     <constraint firstAttribute="height" constant="140" id="Mpl-2H-QHA"/>
+                                    <constraint firstAttribute="trailing" secondItem="6od-r8-riI" secondAttribute="trailing" constant="16" id="N3c-91-Qfe"/>
                                     <constraint firstItem="xNI-nt-UvJ" firstAttribute="top" secondItem="3uY-Kj-vUm" secondAttribute="top" id="NKx-Yv-W8O"/>
                                     <constraint firstItem="mQW-nI-Lrp" firstAttribute="top" secondItem="3uY-Kj-vUm" secondAttribute="top" id="Qie-eR-AkK"/>
                                     <constraint firstAttribute="trailing" secondItem="NTq-me-RUg" secondAttribute="trailing" id="Ssc-DS-2kp"/>
+                                    <constraint firstItem="6od-r8-riI" firstAttribute="top" secondItem="3uY-Kj-vUm" secondAttribute="top" constant="60" id="XgL-e2-z88"/>
                                     <constraint firstItem="NTq-me-RUg" firstAttribute="leading" secondItem="3uY-Kj-vUm" secondAttribute="leading" id="Y45-8t-tBF"/>
                                     <constraint firstAttribute="bottom" secondItem="xNI-nt-UvJ" secondAttribute="bottom" id="fom-Zx-2XV"/>
+                                    <constraint firstItem="6od-r8-riI" firstAttribute="leading" secondItem="3uY-Kj-vUm" secondAttribute="leading" constant="16" id="gkX-6q-Aib"/>
                                     <constraint firstAttribute="bottom" secondItem="mQW-nI-Lrp" secondAttribute="bottom" id="i3y-zw-w3r"/>
                                     <constraint firstItem="xNI-nt-UvJ" firstAttribute="leading" secondItem="3uY-Kj-vUm" secondAttribute="leading" id="ufh-3s-Jvn"/>
                                     <constraint firstItem="mQW-nI-Lrp" firstAttribute="centerX" secondItem="3uY-Kj-vUm" secondAttribute="centerX" id="xzk-Ua-5AS"/>
+                                    <constraint firstAttribute="bottom" secondItem="6od-r8-riI" secondAttribute="bottom" constant="60" id="yfK-or-WGP"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recipe title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OI3-RA-uCg">
@@ -129,6 +142,7 @@
             <connections>
                 <outlet property="hasLactoseLabel" destination="iaH-ZO-8hF" id="14L-jQ-BGZ"/>
                 <outlet property="makeFavoriteButton" destination="rLz-bi-GBU" id="yyg-co-q3q"/>
+                <outlet property="noRecipeImageLabel" destination="6od-r8-riI" id="a3M-ep-JWI"/>
                 <outlet property="recipeContainerView" destination="mTT-DM-RDK" id="8z3-n6-xLN"/>
                 <outlet property="recipeEffectView" destination="xNI-nt-UvJ" id="ppL-Mg-Zgi"/>
                 <outlet property="recipeImageBackgroundView" destination="NTq-me-RUg" id="0os-zZ-7aQ"/>

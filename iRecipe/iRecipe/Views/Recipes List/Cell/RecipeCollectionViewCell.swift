@@ -31,6 +31,7 @@ class RecipeCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var recipeIngredientsLabel: UILabel!
     @IBOutlet private weak var makeFavoriteButton: UIButton!
     @IBOutlet private weak var hasLactoseLabel: UILabel!
+    @IBOutlet private weak var noRecipeImageLabel: UILabel!
     
     lazy private var width: NSLayoutConstraint = {
         let width = contentView.widthAnchor.constraint(equalToConstant: bounds.size.width)
@@ -54,6 +55,7 @@ class RecipeCollectionViewCell: UICollectionViewCell {
         recipeTitleLabel.text = ""
         recipeIngredientsLabel.text = ""
         hasLactoseLabel.isHidden = true
+        noRecipeImageLabel.isHidden = true
     }
     
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
@@ -90,10 +92,10 @@ extension RecipeCollectionViewCell {
         recipeEffectView.effect = UIBlurEffect(style: UIBlurEffect.Style.dark)
         
         recipeTitleLabel.textColor = .white()
-        recipeTitleLabel.font = UIFont.blackWithSize(size: 14.0)
+        recipeTitleLabel.font = UIFont.blackWithSize(size: 15.0)
         
         recipeIngredientsLabel.textColor = .white()
-        recipeIngredientsLabel.font = UIFont.blackWithSize(size: 14.0)
+        recipeIngredientsLabel.font = UIFont.mediumWithSize(size: 14.0)
         
         makeFavoriteButton.backgroundColor = .green()
         makeFavoriteButton.titleLabel?.font = UIFont.blackWithSize(size: 14.0)
@@ -110,6 +112,11 @@ extension RecipeCollectionViewCell {
         hasLactoseLabel.font = UIFont.mediumWithSize(size: 17.0)
         hasLactoseLabel.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 4.0)
         hasLactoseLabel.isHidden = true
+        
+        noRecipeImageLabel.text = "No image available"
+        noRecipeImageLabel.textColor = .white()
+        noRecipeImageLabel.font = UIFont.mediumWithSize(size: 17.0)
+        noRecipeImageLabel.isHidden = true
     }
     
 }
@@ -129,6 +136,7 @@ extension RecipeCollectionViewCell {
     
     private func configureRecipeImageWithUrl(_ url: URL?) {
         guard let url = url else {
+            noRecipeImageLabel.isHidden = false
             return
         }
         recipeImageBackgroundView.contentMode = .scaleAspectFill
