@@ -13,11 +13,11 @@ class FavoriteRecipeManager: NSObject {
     
     static let shared: FavoriteRecipeManager = { return FavoriteRecipeManager() }()
     
-    public func save(id: String, title: String, href: String, ingredients: String, thumbnail: String) {
-        if favoriteRecipeExists(id) { return }
+    public func save(title: String, href: String, ingredients: String, thumbnail: String) {
+        if favoriteRecipeExists(title) { return }
         
         let favoriteRecipe = FavoriteRecipe()
-        favoriteRecipe.recipeId = id
+        favoriteRecipe.recipeId = UUID().uuidString
         favoriteRecipe.title = title
         favoriteRecipe.href = href
         favoriteRecipe.ingredients = ingredients
@@ -31,9 +31,28 @@ class FavoriteRecipeManager: NSObject {
         }
     }
     
-    public func favoriteRecipeExists(_ id: String) -> Bool {
+    public func getAll() -> [FavoriteRecipe] {
         let realm = try! Realm()
-        let favoriteRecipes = realm.objects(FavoriteRecipe.self).filter("recipeId == %@", id)
+        
+        // Query Realm for all recipes
+        // Order criteria -> time stamp
+        // Order -> ascending
+        let favoriteRecipes = realm.objects(FavoriteRecipe.self).sorted(byKeyPath: "timestamp", ascending: true)
+        return Array(favoriteRecipes)
+    }
+    
+    public func deleteAll() {
+        let realm = try! Realm()
+        let favoriteRecipes = realm.objects(FavoriteRecipe.self)
+        
+        try! realm.write {
+            realm.delete(favoriteRecipes)
+        }
+    }
+    
+    public func favoriteRecipeExists(_ title: String) -> Bool {
+        let realm = try! Realm()
+        let favoriteRecipes = realm.objects(FavoriteRecipe.self).filter("title == %@", title)
         return favoriteRecipes.count == 1
     }
     
