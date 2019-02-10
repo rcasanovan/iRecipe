@@ -43,6 +43,17 @@ class FavoriteRecipesTests: XCTestCase {
         XCTAssert(favoriteRecipes.count == 0)
     }
     
+    func testDeleteFavoriteRecipe() {
+        FavoriteRecipeManager.shared.save(title: "Baked Omelet With Broccoli &amp; Tomato", href: "http://www.recipezaar.com/Baked-Omelet-With-Broccoli-Tomato-325014", ingredients: "milk, cottage cheese, broccoli, cheddar cheese, basil, onion powder, eggs, garlic powder, roma tomato, salt", thumbnail: "http://img.recipepuppy.com/123889.jpg")
+        
+        FavoriteRecipeManager.shared.save(title: "Mild Curry Omelet", href: "http://allrecipes.com/Recipe/Mild-Curry-Omelet/Detail.aspx", ingredients: "coriander, cumin, eggs, garlic, green onion, vegetable oil, onions, red pepper, salt, turmeric", thumbnail: "")
+        
+        FavoriteRecipeManager.shared.deleteRecipe("Baked Omelet With Broccoli &amp; Tomato")
+        
+        let favoriteRecipes = FavoriteRecipeManager.shared.getAll()
+        XCTAssert(favoriteRecipes.count == 1)
+    }
+    
     func testFavoriteRecipesOrder() {
         FavoriteRecipeManager.shared.deleteAll()
         

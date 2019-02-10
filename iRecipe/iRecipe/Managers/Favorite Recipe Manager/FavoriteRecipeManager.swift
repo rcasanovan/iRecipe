@@ -50,6 +50,15 @@ class FavoriteRecipeManager: NSObject {
         }
     }
     
+    public func deleteRecipe(_ title: String) {
+        let realm = try! Realm()
+        let recipes = realm.objects(FavoriteRecipe.self).filter("title == %@", title)
+        
+        try! realm.write {
+            realm.delete(recipes)
+        }
+    }
+    
     public func favoriteRecipeExists(_ title: String) -> Bool {
         let realm = try! Realm()
         let favoriteRecipes = realm.objects(FavoriteRecipe.self).filter("title == %@", title)
