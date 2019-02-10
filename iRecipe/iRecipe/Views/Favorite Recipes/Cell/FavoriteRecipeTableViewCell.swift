@@ -36,6 +36,7 @@ class FavoriteRecipeTableViewCell: UITableViewCell {
         recipeImageView.image = nil
         recipeTitleLabel.text = ""
         recipeIngredientsLabel.text = ""
+        hasLactoseLabel.isHidden = true
     }
     
     public func bindWithViewModel(_ viewModel: RecipeViewModel, at index: Int) {
@@ -55,6 +56,7 @@ extension FavoriteRecipeTableViewCell {
     private func setupViews() {
         backgroundColor = .clear
         selectionStyle = .none
+        clipsToBounds = true
         configureSubviews()
     }
     
@@ -77,7 +79,7 @@ extension FavoriteRecipeTableViewCell {
         hasLactoseLabel.backgroundColor = .yellow
         hasLactoseLabel.font = UIFont.mediumWithSize(size: 14.0)
         hasLactoseLabel.transform = CGAffineTransform(rotationAngle: -CGFloat.pi / 4.0)
-        hasLactoseLabel.clipsToBounds = true
+        hasLactoseLabel.isHidden = true
     }
     
 }
@@ -89,6 +91,9 @@ extension FavoriteRecipeTableViewCell {
         recipeIngredientsLabel.text = viewModel?.ingredients
         recipeIngredientsLabel.numberOfLines = 0
         configureRecipeImageWithUrl(viewModel?.recipeUrl)
+        if let hasLactose = viewModel?.hasLactose {
+            hasLactoseLabel.isHidden = !hasLactose
+        }
     }
     
     private func configureRecipeImageWithUrl(_ url: URL?) {
