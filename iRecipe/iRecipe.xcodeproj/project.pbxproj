@@ -52,6 +52,7 @@
 		C81F2AFE220DDAA50037478A /* RecipeCollectionViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F2AFC220DDAA50037478A /* RecipeCollectionViewCell.swift */; };
 		C81F2AFF220DDAA50037478A /* RecipeCollectionViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C81F2AFD220DDAA50037478A /* RecipeCollectionViewCell.xib */; };
 		C81F2B01220EF4610037478A /* ColumnFlowLayout.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F2B00220EF4610037478A /* ColumnFlowLayout.swift */; };
+		C81F2B04221052250037478A /* CustomTitleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F2B03221052250037478A /* CustomTitleView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -118,6 +119,7 @@
 		C81F2AFC220DDAA50037478A /* RecipeCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RecipeCollectionViewCell.swift; sourceTree = "<group>"; };
 		C81F2AFD220DDAA50037478A /* RecipeCollectionViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = RecipeCollectionViewCell.xib; sourceTree = "<group>"; };
 		C81F2B00220EF4610037478A /* ColumnFlowLayout.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ColumnFlowLayout.swift; sourceTree = "<group>"; };
+		C81F2B03221052250037478A /* CustomTitleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CustomTitleView.swift; sourceTree = "<group>"; };
 		E446755234F54F6900B04C6E /* Pods_iRecipeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iRecipeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E507A7E6C5B962ACFDEDFE76 /* Pods-iRecipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iRecipe.release.xcconfig"; path = "Pods/Target Support Files/Pods-iRecipe/Pods-iRecipe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -412,6 +414,7 @@
 		C81F2AEC220DC5B50037478A /* Common */ = {
 			isa = PBXGroup;
 			children = (
+				C81F2B022210520E0037478A /* Custom Title View */,
 				C81F2AED220DC5BF0037478A /* Search View */,
 			);
 			path = Common;
@@ -448,6 +451,14 @@
 				C81F2AFD220DDAA50037478A /* RecipeCollectionViewCell.xib */,
 			);
 			path = Cell;
+			sourceTree = "<group>";
+		};
+		C81F2B022210520E0037478A /* Custom Title View */ = {
+			isa = PBXGroup;
+			children = (
+				C81F2B03221052250037478A /* CustomTitleView.swift */,
+			);
+			path = "Custom Title View";
 			sourceTree = "<group>";
 		};
 		DBC72D44F81AC289B4C74977 /* Frameworks */ = {
@@ -676,6 +687,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C81F2B04221052250037478A /* CustomTitleView.swift in Sources */,
 				C81F2AE9220DC30C0037478A /* RecipesListInteractor.swift in Sources */,
 				C81F2AF7220DD9D20037478A /* RecipesListDatasource.swift in Sources */,
 				C81F2AE5220DC2F20037478A /* RecipesListViewController.swift in Sources */,

@@ -12,6 +12,7 @@ class RecipesListViewController: BaseViewController {
     
     public var presenter: RecipesListPresenterDelegate?
     
+    private let customTitleView: CustomTitleView = CustomTitleView()
     private let searchView: SearchView = SearchView()
     private let recipesListContainerView: UIView = UIView()
     private var recipesListCollectionView: UICollectionView?
@@ -59,6 +60,11 @@ extension RecipesListViewController {
     }
     
     private func configureNavigationBar() {
+        customTitleView.titleColor = .white()
+        customTitleView.setTitle("Recipes")
+        customTitleView.subtitleColor = .white()
+        customTitleView.setSubtitle("Recipe Puppy©")
+        navigationItem.titleView = customTitleView
     }
     
     private func registerCells() {
