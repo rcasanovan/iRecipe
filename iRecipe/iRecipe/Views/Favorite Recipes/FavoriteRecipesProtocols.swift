@@ -17,6 +17,7 @@ protocol FavoriteRecipesPresenterDelegate : class {
 
 // Presenter / Interactor
 protocol FavoriteRecipesInteractorDelegate : class {
+    func getFavoriteRecipes() -> [RecipeViewModel]
 }
 
 // Presenter / Router

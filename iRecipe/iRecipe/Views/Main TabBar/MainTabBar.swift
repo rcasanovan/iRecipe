@@ -13,7 +13,7 @@ class MainTabBar: UITabBarController {
     private var tabBarConfigured: Bool = false
     
     private var recipesNavigationViewController: UINavigationController = RecipesListRouter.setupModule()
-    private let favoritesViewController: UIViewController = UIViewController()
+    private var favoritesNavigationViewController: UINavigationController = FavoriteRecipesRouter.setupModule()
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -33,9 +33,7 @@ extension MainTabBar {
         let recipesTabBarItem = UITabBarItem(title: "Recipes", image: nil, tag: 0)
         let favoritesTabBarItem = UITabBarItem(title: "Favorites", image: nil, tag: 1)
         
-        recipesNavigationViewController.tabBarItem = recipesTabBarItem
-        
-        let favoritesNavigationViewController = UINavigationController(rootViewController: favoritesViewController)
+        recipesNavigationViewController.tabBarItem = recipesTabBarItem        
         favoritesNavigationViewController.tabBarItem = favoritesTabBarItem
         
         viewControllers = [recipesNavigationViewController, favoritesNavigationViewController]

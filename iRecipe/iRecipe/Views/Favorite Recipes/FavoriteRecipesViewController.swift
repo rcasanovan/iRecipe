@@ -13,6 +13,10 @@ class FavoriteRecipesViewController: BaseViewController {
     public var presenter: FavoriteRecipesPresenterDelegate?
     
     private let customTitleView: CustomTitleView = CustomTitleView()
+    private let favoriteRecipesContainerView: UIView = UIView()
+    private var favoriteRecipesTableView: UITableView?
+    private var datasource: FavoriteRecipesDatasource?
+    private var refreshControl: UIRefreshControl = UIRefreshControl()
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,6 +44,21 @@ extension FavoriteRecipesViewController {
      * ConfigureSubviews
      */
     private func configureSubviews() {
+        favoriteRecipesContainerView.backgroundColor = .clear
+        favoriteRecipesTableView = UITableView(frame: favoriteRecipesContainerView.bounds, style: .plain)
+        favoriteRecipesTableView?.tableFooterView = UIView()
+        favoriteRecipesTableView?.separatorStyle = .none
+        favoriteRecipesTableView?.rowHeight = UITableView.automaticDimension
+        favoriteRecipesTableView?.invalidateIntrinsicContentSize()
+        favoriteRecipesTableView?.backgroundColor = .clear
+        favoriteRecipesTableView?.showsVerticalScrollIndicator = false
+        
+        refreshControl.addTarget(self, action: #selector(userDidPullToRefresh), for: .valueChanged)
+        refreshControl.tintColor = .white()
+        favoriteRecipesTableView?.addSubview(refreshControl)
+        
+        registerCells()
+        setupDatasource()
     }
     
     private func configureNavigationBar() {
@@ -51,9 +70,14 @@ extension FavoriteRecipesViewController {
     }
     
     private func registerCells() {
+        favoriteRecipesTableView?.register(UINib(nibName: FavoriteRecipeTableViewCell.identifier, bundle: nil), forCellReuseIdentifier: FavoriteRecipeTableViewCell.identifier)
     }
     
     private func setupDatasource() {
+        if let favoriteRecipesTableView = favoriteRecipesTableView {
+            datasource = FavoriteRecipesDatasource()
+            favoriteRecipesTableView.dataSource = datasource
+        }
     }
     
 }
@@ -69,6 +93,23 @@ extension FavoriteRecipesViewController {
      * Add subviews
      */
     private func addSubviews() {
+        view.addSubview(favoriteRecipesContainerView)
+        
+        view.addConstraintsWithFormat("H:|[v0]|", views: favoriteRecipesContainerView)
+        view.addConstraintsWithFormat("V:|[v0]|", views: favoriteRecipesContainerView)
+        
+        if let favoriteRecipesTableView = favoriteRecipesTableView {
+            favoriteRecipesContainerView.addSubview(favoriteRecipesTableView)
+            favoriteRecipesContainerView.addConstraintsWithFormat("H:|[v0]|", views: favoriteRecipesTableView)
+            favoriteRecipesContainerView.addConstraintsWithFormat("V:|[v0]|", views: favoriteRecipesTableView)
+        }
+    }
+    
+}
+
+extension FavoriteRecipesViewController {
+    
+    @objc private func userDidPullToRefresh() {
     }
     
 }
