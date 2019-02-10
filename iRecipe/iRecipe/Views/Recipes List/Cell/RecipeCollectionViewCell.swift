@@ -8,7 +8,13 @@
 
 import UIKit
 
+protocol RecipeCollectionViewCellDelegate {
+    func makeFavoritePressedAt(_ index: Int)
+}
+
 class RecipeCollectionViewCell: UICollectionViewCell {
+    
+    public var delegate: RecipeCollectionViewCellDelegate?
 
     /**
      * Identifier for reusable cells
@@ -30,6 +36,7 @@ class RecipeCollectionViewCell: UICollectionViewCell {
     }()
     
     private var viewModel: RecipeViewModel?
+    private var index: Int?
     
     
     override func awakeFromNib() {
@@ -49,7 +56,8 @@ class RecipeCollectionViewCell: UICollectionViewCell {
         return contentView.systemLayoutSizeFitting(CGSize(width: targetSize.width, height: 1))
     }
     
-    public func bindWithViewModel(_ viewModel: RecipeViewModel) {
+    public func bindWithViewModel(_ viewModel: RecipeViewModel, at index: Int) {
+        self.index = index
         self.viewModel = viewModel
         configureRecipe()
     }
@@ -88,6 +96,7 @@ extension RecipeCollectionViewCell {
         makeFavoriteButton.layer.borderWidth = 2.0
         makeFavoriteButton.clipsToBounds = true
         makeFavoriteButton.setTitle("Make favorite", for: .normal)
+        makeFavoriteButton.addTarget(self, action: #selector(makeFavoritePressed), for: .touchUpInside)
     }
     
 }
@@ -109,6 +118,17 @@ extension RecipeCollectionViewCell {
         recipeImageView.contentMode = .scaleAspectFill
         recipeImageView.clipsToBounds = true
         recipeImageView.hnk_setImage(from: url, placeholder: nil)
+    }
+    
+}
+
+extension RecipeCollectionViewCell {
+    
+    @objc private func makeFavoritePressed() {
+        guard let index = index else {
+            return
+        }
+        delegate?.makeFavoritePressedAt(index)
     }
     
 }

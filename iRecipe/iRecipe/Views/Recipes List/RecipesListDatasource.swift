@@ -12,6 +12,7 @@ class RecipesListDatasource: NSObject {
     
     public var items: [RecipeViewModel]
     public var isPaginating = true
+    public weak var delegate: BaseViewController?
     
     public override init() {
         self.items = []
@@ -36,7 +37,8 @@ extension RecipesListDatasource: UICollectionViewDataSource {
         }
         
         let viewModel = items[indexPath.row]
-        cell.bindWithViewModel(viewModel)
+        cell.bindWithViewModel(viewModel, at: indexPath.row)
+        cell.delegate = delegate as? RecipeCollectionViewCellDelegate
         return cell
     }
     

@@ -72,4 +72,8 @@ extension RecipesListPresenter: RecipesListPresenterDelegate {
         router.showRecipeDetailWithUrl(url)
     }
     
+    func makeFavoriteSelectedAt(_ index: Int) {
+        print("test")
+    }
+    
 }

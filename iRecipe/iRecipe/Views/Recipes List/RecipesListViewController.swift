@@ -68,6 +68,7 @@ extension RecipesListViewController {
     private func setupDatasource() {
         if let recipesListCollectionView = recipesListCollectionView {
             datasource = RecipesListDatasource()
+            datasource?.delegate = self
             recipesListCollectionView.dataSource = datasource
         }
     }
@@ -147,6 +148,14 @@ extension RecipesListViewController: SearchViewDelegate {
     
     func searchButtonPressedWithSearch(_ search: String?) {
         presenter?.searchRecipe(search)
+    }
+    
+}
+
+extension RecipesListViewController: RecipeCollectionViewCellDelegate {
+    
+    func makeFavoritePressedAt(_ index: Int) {
+        presenter?.makeFavoriteSelectedAt(index)
     }
     
 }
