@@ -21,6 +21,7 @@ protocol RecipesListPresenterDelegate : class {
     func searchRecipe(_ recipe: String?)
     func recipeSelectedAt(_ index: Int)
     func makeFavoriteSelectedAt(_ index: Int)
+    func loadMoreRecipes()
 }
 
 // Presenter / Interactor

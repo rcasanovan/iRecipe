@@ -41,6 +41,7 @@ extension RecipesListInteractor {
     private func updateRecipesWith(_ recipes: [RecipeResponse]) {
         let recipesViewModel = RecipeViewModel.getViewModelsWith(recipes)
         self.recipesViewModel.append(contentsOf: recipesViewModel)
+        page = page + 1
     }
 
 }

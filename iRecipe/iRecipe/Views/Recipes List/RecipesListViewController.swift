@@ -17,6 +17,8 @@ class RecipesListViewController: BaseViewController {
     private let recipesListContainerView: UIView = UIView()
     private var recipesListCollectionView: UICollectionView?
     private var datasource: RecipesListDatasource?
+    private var totalRecipes: Int = 0
+    private var isLoadingNextPage: Bool = false
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -90,6 +92,9 @@ extension RecipesListViewController {
 // MARK: - Layout & constraints
 extension RecipesListViewController {
     
+    /**
+     * Internal struct for layout
+     */
     private struct Layout {
         
         struct CollectionViewCell {
@@ -99,6 +104,10 @@ extension RecipesListViewController {
             static let edgeSpacingBottom: CGFloat = 24.0
             static let edgeSpacingRight: CGFloat = 0.0
             static let numberOfCellsInARow: Int = 1
+        }
+        
+        struct Scroll {
+            static let percentagePosition: Double = 75.0
         }
         
     }
@@ -142,6 +151,17 @@ extension RecipesListViewController: UICollectionViewDelegateFlowLayout, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, willDisplay cell: UICollectionViewCell, forItemAt indexPath: IndexPath) {
+        // Get the position for a percentage of the scrolling
+        // In this case we got the positions for the 75%
+        let position = Int(((Layout.Scroll.percentagePosition * Double(totalRecipes - 1)) / 100.0))
+        
+        // if we're not loading a next page && we´re in the 75% position
+        if !self.isLoadingNextPage && indexPath.item >= position {
+            // Change the value -> We're loading the next page
+            self.isLoadingNextPage = true
+            // Call the presenter
+            presenter?.loadMoreRecipes()
+        }
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
@@ -181,6 +201,8 @@ extension RecipesListViewController: RecipesListViewInjection {
     }
     
     func loadRecipes(_ viewModels: [RecipeViewModel]) {
+        totalRecipes = viewModels.count
+        isLoadingNextPage = false
         datasource?.items = viewModels
         recipesListCollectionView?.reloadData()
     }

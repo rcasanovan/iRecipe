@@ -13,6 +13,7 @@ class RecipesListPresenter {
     private weak var view: RecipesListViewInjection?
     private let interactor: RecipesListInteractorDelegate
     private let router: RecipesListRouterDelegate
+    private var recipeSearch: String?
     
     // MARK - Lifecycle
     init(view: RecipesListViewInjection, navigationController: UINavigationController? = nil) {
@@ -25,8 +26,8 @@ class RecipesListPresenter {
 
 extension RecipesListPresenter {
     
-    private func getRecipes(_ search: String? = nil) {
-        view?.showProgress(true, status: "Loading recipes")
+    private func getRecipes(_ search: String? = nil, showProgress: Bool) {
+        view?.showProgress(showProgress, status: "Loading recipes")
         
         interactor.getRecipeList(search: search) { [weak self] (recipes, success, error) in
             guard let `self` = self else { return }
@@ -56,12 +57,13 @@ extension RecipesListPresenter: RecipesListPresenterDelegate {
     
     func viewDidLoad() {
         interactor.clear()
-        getRecipes()
+        getRecipes(showProgress: true)
     }
     
     func searchRecipe(_ recipe: String?) {
+        recipeSearch = recipe
         interactor.clear()
-        getRecipes(recipe)
+        getRecipes(recipeSearch, showProgress: true)
     }
     
     func recipeSelectedAt(_ index: Int) {
@@ -80,6 +82,10 @@ extension RecipesListPresenter: RecipesListPresenterDelegate {
         FavoriteRecipeManager.shared.save(title: recipeSelected.title, href: href, ingredients: recipeSelected.ingredients, thumbnail: thumbnail)
         
         view?.showMessageWith(title: "🥘🥗🌮🥧", message: "This recipe has been saved as favorite", actionTitle: "Accept")
+    }
+    
+    func loadMoreRecipes() {
+        getRecipes(recipeSearch, showProgress: false)
     }
     
 }
