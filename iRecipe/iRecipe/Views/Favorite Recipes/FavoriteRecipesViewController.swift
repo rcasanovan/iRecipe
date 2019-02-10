@@ -77,6 +77,7 @@ extension FavoriteRecipesViewController {
     private func setupDatasource() {
         if let favoriteRecipesTableView = favoriteRecipesTableView {
             datasource = FavoriteRecipesDatasource()
+            datasource?.delegate = self
             favoriteRecipesTableView.dataSource = datasource
         }
     }

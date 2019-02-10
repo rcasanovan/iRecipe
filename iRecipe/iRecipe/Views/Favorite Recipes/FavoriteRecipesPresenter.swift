@@ -42,4 +42,9 @@ extension FavoriteRecipesPresenter: FavoriteRecipesPresenterDelegate {
         getFavoriteRecipes()
     }
     
+    func deleteRecipeAt(_ index: Int) {
+        interactor.deleteRecipeAt(index)
+        getFavoriteRecipes()
+    }
+    
 }

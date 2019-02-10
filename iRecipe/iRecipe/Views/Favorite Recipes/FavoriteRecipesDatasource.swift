@@ -11,6 +11,7 @@ import UIKit
 class FavoriteRecipesDatasource: NSObject {
     
     public var favoriteRecipes: [RecipeViewModel]
+    public weak var delegate: FavoriteRecipesViewController?
     
     public override init() {
         favoriteRecipes = []
@@ -52,7 +53,7 @@ extension FavoriteRecipesDatasource: UITableViewDataSource {
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if (editingStyle == .delete) {
-            print("test")
+            delegate?.presenter?.deleteRecipeAt(indexPath.row)
         }
     }
     

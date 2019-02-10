@@ -16,11 +16,13 @@ protocol FavoriteRecipesViewInjection : class {
 protocol FavoriteRecipesPresenterDelegate : class {
     func viewDidLoad()
     func refresh()
+    func deleteRecipeAt(_ index: Int)
 }
 
 // Presenter / Interactor
 protocol FavoriteRecipesInteractorDelegate : class {
     func getFavoriteRecipes() -> [RecipeViewModel]
+    func deleteRecipeAt(_ index: Int)
 }
 
 // Presenter / Router
