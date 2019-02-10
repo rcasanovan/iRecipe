@@ -122,7 +122,7 @@ extension RecipesListViewController: UICollectionViewDelegateFlowLayout, UIColle
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, sizeForItemAt indexPath: IndexPath) -> CGSize {
         let side = getPostCellSide()
 
-        return CGSize(width: side, height: 200.0)
+        return CGSize(width: side, height: 230.0)
     }
     
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
