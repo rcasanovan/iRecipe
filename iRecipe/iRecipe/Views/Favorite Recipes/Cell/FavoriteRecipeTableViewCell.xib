@@ -38,7 +38,7 @@
                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ln8-jV-hMl">
                         <rect key="frame" x="102" y="44" width="161" height="41"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="41" id="jGN-IR-GV3"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="41" id="jGN-IR-GV3"/>
                         </constraints>
                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                         <nil key="textColor"/>
@@ -48,7 +48,6 @@
                 <constraints>
                     <constraint firstItem="RJh-2p-daB" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="1GV-Lo-OOC"/>
                     <constraint firstItem="Ln8-jV-hMl" firstAttribute="top" secondItem="hH5-9x-gP5" secondAttribute="bottom" constant="8" id="4ag-hR-O2N"/>
-                    <constraint firstAttribute="bottomMargin" secondItem="RJh-2p-daB" secondAttribute="bottom" constant="4" id="Cuv-u1-KTR"/>
                     <constraint firstItem="hH5-9x-gP5" firstAttribute="top" secondItem="H2p-sc-9uM" secondAttribute="topMargin" constant="4" id="EbQ-YC-tmt"/>
                     <constraint firstItem="Ln8-jV-hMl" firstAttribute="leading" secondItem="RJh-2p-daB" secondAttribute="trailing" constant="15" id="FOf-3G-tF5"/>
                     <constraint firstAttribute="trailingMargin" secondItem="Ln8-jV-hMl" secondAttribute="trailing" constant="15" id="Tmo-9i-T4H"/>

@@ -66,7 +66,6 @@ extension FavoriteRecipeTableViewCell {
         
         recipeIngredientsLabel.textColor = .white()
         recipeIngredientsLabel.font = UIFont.mediumWithSize(size: 14.0)
-        recipeIngredientsLabel.adjustsFontSizeToFitWidth = true
     }
     
 }

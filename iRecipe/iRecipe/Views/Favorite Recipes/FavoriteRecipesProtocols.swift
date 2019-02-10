@@ -15,6 +15,7 @@ protocol FavoriteRecipesViewInjection : class {
 
 protocol FavoriteRecipesPresenterDelegate : class {
     func viewDidLoad()
+    func refresh()
 }
 
 // Presenter / Interactor

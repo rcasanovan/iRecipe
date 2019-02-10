@@ -38,4 +38,8 @@ extension FavoriteRecipesPresenter: FavoriteRecipesPresenterDelegate {
         getFavoriteRecipes()
     }
     
+    func refresh() {
+        getFavoriteRecipes()
+    }
+    
 }

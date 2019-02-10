@@ -111,6 +111,7 @@ extension FavoriteRecipesViewController {
 extension FavoriteRecipesViewController {
     
     @objc private func userDidPullToRefresh() {
+        presenter?.refresh()
     }
     
 }
