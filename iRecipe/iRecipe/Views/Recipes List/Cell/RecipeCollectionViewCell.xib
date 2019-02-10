@@ -19,22 +19,35 @@
                 <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                 <subviews>
-                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="31w-Pu-7wx">
+                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mTT-DM-RDK">
                         <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
-                        <color key="backgroundColor" red="0.91790798829999998" green="1" blue="0.2204472116" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="NTq-me-RUg">
+                                <rect key="frame" x="0.0" y="0.0" width="300" height="200"/>
+                            </imageView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                         <constraints>
-                            <constraint firstAttribute="height" constant="200" id="sDB-Rf-fZD"/>
+                            <constraint firstAttribute="bottom" secondItem="NTq-me-RUg" secondAttribute="bottom" id="98k-Ar-Xby"/>
+                            <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="250" constant="200" id="9Z8-cQ-P97"/>
+                            <constraint firstItem="NTq-me-RUg" firstAttribute="top" secondItem="mTT-DM-RDK" secondAttribute="top" id="AjQ-Dn-QaD"/>
+                            <constraint firstItem="NTq-me-RUg" firstAttribute="leading" secondItem="mTT-DM-RDK" secondAttribute="leading" id="Buc-IU-Imj"/>
+                            <constraint firstAttribute="trailing" secondItem="NTq-me-RUg" secondAttribute="trailing" id="ChJ-Fk-ZEC"/>
+                            <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="250" constant="300" id="f4X-Cg-EPI"/>
                         </constraints>
-                    </imageView>
+                    </view>
                 </subviews>
             </view>
             <constraints>
-                <constraint firstItem="31w-Pu-7wx" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="A0E-lc-zGL"/>
-                <constraint firstAttribute="bottom" secondItem="31w-Pu-7wx" secondAttribute="bottom" id="M2m-6l-j7G"/>
-                <constraint firstAttribute="trailing" secondItem="31w-Pu-7wx" secondAttribute="trailing" id="pRn-LB-Gn1"/>
-                <constraint firstItem="31w-Pu-7wx" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="tEk-Ci-fva"/>
+                <constraint firstAttribute="bottom" secondItem="mTT-DM-RDK" secondAttribute="bottom" id="2A8-f8-4ue"/>
+                <constraint firstAttribute="trailing" secondItem="mTT-DM-RDK" secondAttribute="trailing" id="75l-WJ-NDO"/>
+                <constraint firstItem="mTT-DM-RDK" firstAttribute="top" secondItem="gTV-IL-0wX" secondAttribute="top" id="XK1-ZQ-OeW"/>
+                <constraint firstItem="mTT-DM-RDK" firstAttribute="leading" secondItem="gTV-IL-0wX" secondAttribute="leading" id="e8Y-Er-WwG"/>
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
+            <connections>
+                <outlet property="recipeImageView" destination="NTq-me-RUg" id="0os-zZ-7aQ"/>
+            </connections>
             <point key="canvasLocation" x="52.799999999999997" y="48.575712143928037"/>
         </collectionViewCell>
     </objects>

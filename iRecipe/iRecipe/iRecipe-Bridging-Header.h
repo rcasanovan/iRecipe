@@ -15,4 +15,7 @@
 //__ SVProgressHUD
 #import <SVProgressHUD/SVProgressHUD.h>
 
+//__ Haneke
+#import <Haneke/Haneke.h>
+
 #endif /* iRecipe_Bridging_Header_h */

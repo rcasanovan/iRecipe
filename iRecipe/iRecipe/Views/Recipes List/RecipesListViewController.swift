@@ -83,11 +83,11 @@ extension RecipesListViewController {
     private struct Layout {
         
         struct CollectionViewCell {
-            static let centerSpacing: CGFloat = 16.0
+            static let centerSpacing: CGFloat = 0.0
             static let edgeSpacingTop: CGFloat = 24.0
-            static let edgeSpacingLeft: CGFloat = 16.0
+            static let edgeSpacingLeft: CGFloat = 0.0
             static let edgeSpacingBottom: CGFloat = 24.0
-            static let edgeSpacingRight: CGFloat = 16.0
+            static let edgeSpacingRight: CGFloat = 0.0
             static let numberOfCellsInARow: Int = 1
         }
         
@@ -128,11 +128,11 @@ extension RecipesListViewController: UICollectionViewDelegateFlowLayout, UIColle
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
         return UIEdgeInsets(top: Layout.CollectionViewCell.edgeSpacingTop, left: Layout.CollectionViewCell.edgeSpacingLeft, bottom: Layout.CollectionViewCell.edgeSpacingBottom, right: Layout.CollectionViewCell.edgeSpacingRight)
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
         return Layout.CollectionViewCell.centerSpacing
     }
-    
+
     func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
         return Layout.CollectionViewCell.centerSpacing
     }
@@ -141,10 +141,6 @@ extension RecipesListViewController: UICollectionViewDelegateFlowLayout, UIColle
     }
     
     func collectionView(_ collectionView: UICollectionView, didSelectItemAt indexPath: IndexPath) {
-    }
-    
-    func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
-        return CGSize(width: collectionView.frame.width, height: 0.0)
     }
     
 }
