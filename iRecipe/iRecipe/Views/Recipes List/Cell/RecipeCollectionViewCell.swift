@@ -28,6 +28,7 @@ class RecipeCollectionViewCell: UICollectionViewCell {
     @IBOutlet private weak var recipeTitleLabel: UILabel!
     @IBOutlet private weak var recipeIngredientsLabel: UILabel!
     @IBOutlet private weak var makeFavoriteButton: UIButton!
+    @IBOutlet private weak var hasLactoseLabel: UILabel!
     
     lazy private var width: NSLayoutConstraint = {
         let width = contentView.widthAnchor.constraint(equalToConstant: bounds.size.width)
@@ -49,6 +50,7 @@ class RecipeCollectionViewCell: UICollectionViewCell {
         recipeImageView.image = nil
         recipeTitleLabel.text = ""
         recipeIngredientsLabel.text = ""
+        hasLactoseLabel.isHidden = true
     }
     
     override func systemLayoutSizeFitting(_ targetSize: CGSize, withHorizontalFittingPriority horizontalFittingPriority: UILayoutPriority, verticalFittingPriority: UILayoutPriority) -> CGSize {
@@ -97,6 +99,12 @@ extension RecipeCollectionViewCell {
         makeFavoriteButton.clipsToBounds = true
         makeFavoriteButton.setTitle("Make favorite", for: .normal)
         makeFavoriteButton.addTarget(self, action: #selector(makeFavoritePressed), for: .touchUpInside)
+        
+        hasLactoseLabel.text = "Has lactose"
+        hasLactoseLabel.backgroundColor = .yellow
+        hasLactoseLabel.font = UIFont.mediumWithSize(size: 17.0)
+        hasLactoseLabel.transform = CGAffineTransform(rotationAngle: CGFloat.pi / 4.0)
+        hasLactoseLabel.isHidden = true
     }
     
 }
@@ -109,6 +117,9 @@ extension RecipeCollectionViewCell {
         recipeIngredientsLabel.numberOfLines = 0
         recipeIngredientsLabel.sizeToFit()
         configureRecipeImageWithUrl(viewModel?.recipeUrl)
+        if let hasLactose = viewModel?.hasLactose {
+            hasLactoseLabel.isHidden = !hasLactose
+        }
     }
     
     private func configureRecipeImageWithUrl(_ url: URL?) {

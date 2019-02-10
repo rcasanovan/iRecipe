@@ -28,7 +28,7 @@
                                     <constraint firstAttribute="height" constant="140" id="0mK-EF-716"/>
                                 </constraints>
                             </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OI3-RA-uCg">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="recipe title" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OI3-RA-uCg">
                                 <rect key="frame" x="8" y="148" width="166" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="21" id="PBt-J8-aRQ"/>
@@ -43,12 +43,22 @@
                                     <constraint firstAttribute="width" constant="110" id="kvg-eS-KbZ"/>
                                     <constraint firstAttribute="height" constant="40" id="loG-OY-XJP"/>
                                 </constraints>
-                                <state key="normal" title="Button"/>
+                                <state key="normal" title="Make favorite"/>
                             </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Label" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hhk-JH-jY8">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="ingredients" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Hhk-JH-jY8">
                                 <rect key="frame" x="8" y="177" width="166" height="21"/>
                                 <constraints>
                                     <constraint firstAttribute="height" relation="greaterThanOrEqual" priority="250" constant="21" id="0I1-nx-oQg"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Has lactose" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="iaH-ZO-8hF">
+                                <rect key="frame" x="175" y="30" width="160" height="23"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="23" id="689-Zs-MEy"/>
+                                    <constraint firstAttribute="width" constant="160" id="s3G-Em-DE9"/>
                                 </constraints>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -64,9 +74,11 @@
                             <constraint firstItem="NTq-me-RUg" firstAttribute="leading" secondItem="mTT-DM-RDK" secondAttribute="leading" id="Buc-IU-Imj"/>
                             <constraint firstAttribute="trailing" secondItem="NTq-me-RUg" secondAttribute="trailing" id="ChJ-Fk-ZEC"/>
                             <constraint firstAttribute="bottom" secondItem="Hhk-JH-jY8" secondAttribute="bottom" constant="32" id="Kx7-sY-pd0"/>
+                            <constraint firstAttribute="trailing" secondItem="iaH-ZO-8hF" secondAttribute="trailing" constant="-35" id="MaB-dU-VF9"/>
                             <constraint firstAttribute="trailing" secondItem="rLz-bi-GBU" secondAttribute="trailing" constant="8" id="Oq5-HX-K01"/>
                             <constraint firstItem="rLz-bi-GBU" firstAttribute="top" secondItem="NTq-me-RUg" secondAttribute="bottom" constant="8" id="U6S-Im-XID"/>
                             <constraint firstAttribute="width" relation="greaterThanOrEqual" priority="250" constant="300" id="f4X-Cg-EPI"/>
+                            <constraint firstItem="iaH-ZO-8hF" firstAttribute="top" secondItem="mTT-DM-RDK" secondAttribute="top" constant="30" id="fmq-k2-Wa6"/>
                             <constraint firstItem="OI3-RA-uCg" firstAttribute="leading" secondItem="mTT-DM-RDK" secondAttribute="leading" constant="8" id="pOt-Kw-bso"/>
                             <constraint firstItem="Hhk-JH-jY8" firstAttribute="top" secondItem="OI3-RA-uCg" secondAttribute="bottom" constant="8" id="s1d-cC-Cmg"/>
                             <constraint firstItem="rLz-bi-GBU" firstAttribute="leading" secondItem="OI3-RA-uCg" secondAttribute="trailing" constant="8" id="tRA-mb-cug"/>
@@ -83,6 +95,7 @@
             </constraints>
             <viewLayoutGuide key="safeArea" id="ZTg-uK-7eu"/>
             <connections>
+                <outlet property="hasLactoseLabel" destination="iaH-ZO-8hF" id="14L-jQ-BGZ"/>
                 <outlet property="makeFavoriteButton" destination="rLz-bi-GBU" id="yyg-co-q3q"/>
                 <outlet property="recipeContainerView" destination="mTT-DM-RDK" id="8z3-n6-xLN"/>
                 <outlet property="recipeImageView" destination="NTq-me-RUg" id="0os-zZ-7aQ"/>

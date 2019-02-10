@@ -69,4 +69,8 @@ extension UIColor {
         return UIColor.colorWithHex(hex: "#3a7a12")
     }
     
+    public static func yellow() -> UIColor {
+        return UIColor.yellow
+    }
+    
 }
