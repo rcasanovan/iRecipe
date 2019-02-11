@@ -62,8 +62,8 @@ class FavoriteRecipesTests: XCTestCase {
         FavoriteRecipeManager.shared.save(title: "Mild Curry Omelet", href: "http://allrecipes.com/Recipe/Mild-Curry-Omelet/Detail.aspx", ingredients: "coriander, cumin, eggs, garlic, green onion, vegetable oil, onions, red pepper, salt, turmeric", thumbnail: "")
         
         let favoriteRecipes = FavoriteRecipeManager.shared.getAll()
-        XCTAssert(favoriteRecipes[0].title == "Baked Omelet With Broccoli &amp; Tomato" &&
-            favoriteRecipes[1].title == "Mild Curry Omelet")
+        XCTAssert(favoriteRecipes[1].title == "Baked Omelet With Broccoli &amp; Tomato" &&
+            favoriteRecipes[0].title == "Mild Curry Omelet")
     }
     
     func testFavoriteRecipeExists() {

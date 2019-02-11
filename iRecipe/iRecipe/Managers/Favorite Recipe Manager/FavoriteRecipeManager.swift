@@ -36,8 +36,8 @@ class FavoriteRecipeManager: NSObject {
         
         // Query Realm for all recipes
         // Order criteria -> time stamp
-        // Order -> ascending
-        let favoriteRecipes = realm.objects(FavoriteRecipe.self).sorted(byKeyPath: "timestamp", ascending: true)
+        // Order -> descending
+        let favoriteRecipes = realm.objects(FavoriteRecipe.self).sorted(byKeyPath: "timestamp", ascending: false)
         return Array(favoriteRecipes)
     }
     
