@@ -11,15 +11,17 @@ import UIKit
 class RecipesListRouter {
     
     private weak var navigationController: UINavigationController?
+    private weak var splitViewController: UISplitViewController?
     
-    init(navigationController: UINavigationController? = nil) {
+    init(navigationController: UINavigationController? = nil, splitViewController: UISplitViewController? = nil) {
         self.navigationController = navigationController
+        self.splitViewController = splitViewController
     }
     
-    public static func setupModule() -> UINavigationController {
+    public static func setupModule(splitViewController: UISplitViewController? = nil) -> UINavigationController {
         let recipesVC = RecipesListViewController()
         let recipesNVC = UINavigationController(rootViewController: recipesVC)
-        recipesVC.presenter = RecipesListPresenter(view: recipesVC, navigationController: recipesNVC)
+        recipesVC.presenter = RecipesListPresenter(view: recipesVC, navigationController: recipesNVC, splitViewController: splitViewController)
         return recipesNVC
     }
     
@@ -29,7 +31,15 @@ extension RecipesListRouter: RecipesListRouterDelegate {
     
     func showRecipeDetailWithUrl(_ url: URL) {
         let recipeDetailVC = RecipeDetailRouter.setupModuleWithRecipeUrl(url)
-        navigationController?.pushViewController(recipeDetailVC, animated: true)
+        
+        guard let splitViewController = splitViewController else {
+            
+            navigationController?.pushViewController(recipeDetailVC, animated: true)
+            return
+        }
+        
+        splitViewController.showDetailViewController(recipeDetailVC, sender: nil)
+        
     }
     
 }

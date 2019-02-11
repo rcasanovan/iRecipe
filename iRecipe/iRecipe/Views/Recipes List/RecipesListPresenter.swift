@@ -16,10 +16,10 @@ class RecipesListPresenter {
     private var recipeSearch: String?
     
     // MARK - Lifecycle
-    init(view: RecipesListViewInjection, navigationController: UINavigationController? = nil) {
+    init(view: RecipesListViewInjection, navigationController: UINavigationController? = nil, splitViewController: UISplitViewController? = nil) {
         self.view = view
         self.interactor = RecipesListInteractor()
-        self.router = RecipesListRouter(navigationController: navigationController)
+        self.router = RecipesListRouter(navigationController: navigationController, splitViewController: splitViewController)
     }
     
 }

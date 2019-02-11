@@ -12,7 +12,7 @@ class MainTabBar: UITabBarController {
     
     private var tabBarConfigured: Bool = false
     
-    private var recipesNavigationViewController: UINavigationController = RecipesListRouter.setupModule()
+    private var recipesNavigationViewController: UINavigationController?
     private var favoritesNavigationViewController: UINavigationController = FavoriteRecipesRouter.setupModule()
     
     override func viewWillAppear(_ animated: Bool) {
@@ -43,7 +43,14 @@ extension MainTabBar {
     private func configureViewControllers(_ tabBarItems: [UITabBarItem]) {
         if UIDevice.current.userInterfaceIdiom == .pad {
             let splitViewController =  UISplitViewController()
-            splitViewController.viewControllers = [recipesNavigationViewController, UIViewController()]
+            
+            recipesNavigationViewController = RecipesListRouter.setupModule(splitViewController: splitViewController)
+            
+            guard let recipesNavigationViewController = recipesNavigationViewController else {
+                return
+            }
+            
+            splitViewController.viewControllers = [recipesNavigationViewController]
             splitViewController.tabBarItem = tabBarItems[0]
             splitViewController.preferredDisplayMode = .allVisible
             splitViewController.maximumPrimaryColumnWidth = UIScreen.main.bounds.width / 2.0
@@ -51,6 +58,12 @@ extension MainTabBar {
             splitViewController.preferredPrimaryColumnWidthFraction = 0.5
             favoritesNavigationViewController.tabBarItem = tabBarItems[1]
             viewControllers = [splitViewController, favoritesNavigationViewController]
+            return
+        }
+        
+        recipesNavigationViewController = RecipesListRouter.setupModule()
+        
+        guard let recipesNavigationViewController = recipesNavigationViewController else {
             return
         }
         
