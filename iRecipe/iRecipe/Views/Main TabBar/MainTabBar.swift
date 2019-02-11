@@ -33,14 +33,30 @@ extension MainTabBar {
         let recipesTabBarItem = UITabBarItem(title: "Recipes", image: nil, tag: 0)
         let favoritesTabBarItem = UITabBarItem(title: "Favorites", image: nil, tag: 1)
         
-        recipesNavigationViewController.tabBarItem = recipesTabBarItem        
-        favoritesNavigationViewController.tabBarItem = favoritesTabBarItem
-        
-        viewControllers = [recipesNavigationViewController, favoritesNavigationViewController]
+        configureViewControllers([recipesTabBarItem, favoritesTabBarItem])
         
         tabBarConfigured = true
         
         selectedIndex = 0
+    }
+    
+    private func configureViewControllers(_ tabBarItems: [UITabBarItem]) {
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            let splitViewController =  UISplitViewController()
+            splitViewController.viewControllers = [recipesNavigationViewController, UIViewController()]
+            splitViewController.tabBarItem = tabBarItems[0]
+            splitViewController.preferredDisplayMode = .allVisible
+            splitViewController.maximumPrimaryColumnWidth = UIScreen.main.bounds.width / 2.0
+            splitViewController.minimumPrimaryColumnWidth = UIScreen.main.bounds.width / 2.0
+            splitViewController.preferredPrimaryColumnWidthFraction = 0.5
+            favoritesNavigationViewController.tabBarItem = tabBarItems[1]
+            viewControllers = [splitViewController, favoritesNavigationViewController]
+            return
+        }
+        
+        recipesNavigationViewController.tabBarItem = tabBarItems[0]
+        favoritesNavigationViewController.tabBarItem = tabBarItems[1]
+        viewControllers = [recipesNavigationViewController, favoritesNavigationViewController]
     }
     
 }

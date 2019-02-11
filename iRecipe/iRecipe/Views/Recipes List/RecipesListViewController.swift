@@ -19,6 +19,7 @@ class RecipesListViewController: BaseViewController {
     private var datasource: RecipesListDatasource?
     private var totalRecipes: Int = 0
     private var isLoadingNextPage: Bool = false
+    private var numberOfCellsInARow: Int = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -38,6 +39,10 @@ extension RecipesListViewController {
     private func setupViews() {
         view.backgroundColor = .gray()
         edgesForExtendedLayout = []
+        
+        if UIDevice.current.userInterfaceIdiom == .pad {
+            numberOfCellsInARow = 2
+        }
         
         configureSubviews()
         addSubviews()
@@ -82,9 +87,9 @@ extension RecipesListViewController {
     }
     
     private func getPostCellSide() -> CGFloat {
-        let screenWidth: CGFloat = UIScreen.main.bounds.width
-        let cellContainerWidth: CGFloat = screenWidth - Layout.CollectionViewCell.centerSpacing*(CGFloat(Layout.CollectionViewCell.numberOfCellsInARow-1)) - Layout.CollectionViewCell.edgeSpacingLeft*CGFloat(Layout.CollectionViewCell.numberOfCellsInARow)
-        return cellContainerWidth / CGFloat(Layout.CollectionViewCell.numberOfCellsInARow)
+        let screenWidth: CGFloat = UIScreen.main.bounds.width / CGFloat(numberOfCellsInARow)
+        let cellContainerWidth: CGFloat = screenWidth - Layout.CollectionViewCell.centerSpacing*(CGFloat(numberOfCellsInARow-1)) - Layout.CollectionViewCell.edgeSpacingLeft*CGFloat(numberOfCellsInARow)
+        return cellContainerWidth / CGFloat(numberOfCellsInARow)
     }
     
 }
@@ -103,7 +108,6 @@ extension RecipesListViewController {
             static let edgeSpacingLeft: CGFloat = 0.0
             static let edgeSpacingBottom: CGFloat = 24.0
             static let edgeSpacingRight: CGFloat = 0.0
-            static let numberOfCellsInARow: Int = 1
         }
         
         struct Scroll {
@@ -204,6 +208,7 @@ extension RecipesListViewController: RecipesListViewInjection {
         if fromBeginning {
             recipesListCollectionView?.setContentOffset(CGPoint.zero, animated: false)
         }
+        
         totalRecipes = viewModels.count
         isLoadingNextPage = false
         datasource?.items = viewModels
