@@ -200,7 +200,10 @@ extension RecipesListViewController: RecipesListViewInjection {
         showAlertWith(title: title, message: message, actionTitle: actionTitle)
     }
     
-    func loadRecipes(_ viewModels: [RecipeViewModel]) {
+    func loadRecipes(_ viewModels: [RecipeViewModel], fromBeginning: Bool) {
+        if fromBeginning {
+            recipesListCollectionView?.setContentOffset(CGPoint.zero, animated: false)
+        }
         totalRecipes = viewModels.count
         isLoadingNextPage = false
         datasource?.items = viewModels

@@ -13,7 +13,7 @@ protocol RecipesListViewInjection : class {
     func showProgress(_ show: Bool, status: String)
     func showProgress(_ show: Bool)
     func showMessageWith(title: String, message: String, actionTitle: String)
-    func loadRecipes(_ viewModels: [RecipeViewModel])
+    func loadRecipes(_ viewModels: [RecipeViewModel], fromBeginning: Bool)
 }
 
 protocol RecipesListPresenterDelegate : class {

@@ -35,7 +35,7 @@ extension RecipesListPresenter {
             self.view?.showProgress(false)
             
             if let recipes = recipes {
-                self.view?.loadRecipes(recipes)
+                self.view?.loadRecipes(recipes, fromBeginning: showProgress)
                 return
             }
             

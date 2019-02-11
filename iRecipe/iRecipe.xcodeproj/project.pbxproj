@@ -202,8 +202,8 @@
 			children = (
 				C81F2A86220D94930037478A /* iRecipe-Bridging-Header.h */,
 				C8070CAA220CD9BF002F518E /* AppDelegate.swift */,
-				C89D8C4C22117A0E001256B3 /* Utils */,
 				C81F2AAE220DA0B30037478A /* Views */,
+				C89D8C4C22117A0E001256B3 /* Utils */,
 				C81F2A87220D96430037478A /* Network */,
 				C81F2A7F220D941C0037478A /* Managers */,
 				C81F2AC9220DBCA50037478A /* Extensions */,
