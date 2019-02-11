@@ -53,6 +53,7 @@ extension FavoriteRecipesViewController {
         favoriteRecipesTableView?.invalidateIntrinsicContentSize()
         favoriteRecipesTableView?.backgroundColor = .clear
         favoriteRecipesTableView?.showsVerticalScrollIndicator = false
+        favoriteRecipesTableView?.delegate = self
         
         refreshControl.addTarget(self, action: #selector(userDidPullToRefresh), for: .valueChanged)
         refreshControl.tintColor = .white()
@@ -113,6 +114,15 @@ extension FavoriteRecipesViewController {
     
     @objc private func userDidPullToRefresh() {
         presenter?.refresh()
+    }
+    
+}
+
+// MARK: - UITableViewDelegate
+extension FavoriteRecipesViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        presenter?.recipeSelectedAt(indexPath.row)
     }
     
 }

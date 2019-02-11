@@ -17,15 +17,18 @@ protocol FavoriteRecipesPresenterDelegate : class {
     func viewDidLoad()
     func refresh()
     func deleteRecipeAt(_ index: Int)
+    func recipeSelectedAt(_ index: Int)
 }
 
 // Presenter / Interactor
 protocol FavoriteRecipesInteractorDelegate : class {
     func getFavoriteRecipes() -> [RecipeViewModel]
     func deleteRecipeAt(_ index: Int)
+    func getRecipeUrlSelectedAt(_ index: Int) -> URL?
 }
 
 // Presenter / Router
 protocol FavoriteRecipesRouterDelegate : class {
+    func showRecipeDetailWithUrl(_ url: URL)
 }
 

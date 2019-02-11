@@ -36,4 +36,11 @@ extension FavoriteRecipesInteractor: FavoriteRecipesInteractorDelegate {
         FavoriteRecipeManager.shared.deleteRecipe(recipeSelected.title)
     }
     
+    func getRecipeUrlSelectedAt(_ index: Int) -> URL? {
+        if !favoriteRecipes.indices.contains(index) { return nil }
+        
+        let recipe = favoriteRecipes[index]
+        return URL(string: recipe.href)
+    }
+    
 }

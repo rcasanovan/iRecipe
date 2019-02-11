@@ -47,4 +47,12 @@ extension FavoriteRecipesPresenter: FavoriteRecipesPresenterDelegate {
         getFavoriteRecipes()
     }
     
+    func recipeSelectedAt(_ index: Int) {
+        guard let url = interactor.getRecipeUrlSelectedAt(index) else {
+            return
+        }
+        
+        router.showRecipeDetailWithUrl(url)
+    }
+    
 }
