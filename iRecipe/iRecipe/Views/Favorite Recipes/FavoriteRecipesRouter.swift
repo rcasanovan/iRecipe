@@ -7,7 +7,6 @@
 //
 
 import Foundation
-import SafariServices
 
 class FavoriteRecipesRouter {
     
@@ -29,8 +28,8 @@ class FavoriteRecipesRouter {
 extension FavoriteRecipesRouter: FavoriteRecipesRouterDelegate {
     
     func showRecipeDetailWithUrl(_ url: URL) {
-        let safariVC = SFSafariViewController(url: url)
-        navigationController?.present(safariVC, animated: true, completion: nil)
+        let recipeDetailVC = RecipeDetailRouter.setupModuleWithRecipeUrl(url)
+        navigationController?.pushViewController(recipeDetailVC, animated: true)
     }
     
 }

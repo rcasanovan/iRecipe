@@ -10,10 +10,7 @@ import Foundation
 
 //__ View / Presenter
 protocol RecipeDetailViewInjection : class {
-    func showSuccessMessage(_ message: String)
-    func showAlertWith(title: String, message: String)
-    func loadUrl(_ url: String)
-    func showLoader(_ show: Bool)
+    func loadUrl(_ url: URL)
 }
 
 @objc protocol RecipeDetailPresenterDelegate : class {

@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SafariServices
 
 class RecipesListRouter {
     
@@ -29,8 +28,8 @@ class RecipesListRouter {
 extension RecipesListRouter: RecipesListRouterDelegate {
     
     func showRecipeDetailWithUrl(_ url: URL) {
-        let safariVC = SFSafariViewController(url: url)
-        navigationController?.present(safariVC, animated: true, completion: nil)
+        let recipeDetailVC = RecipeDetailRouter.setupModuleWithRecipeUrl(url)
+        navigationController?.pushViewController(recipeDetailVC, animated: true)
     }
     
 }
