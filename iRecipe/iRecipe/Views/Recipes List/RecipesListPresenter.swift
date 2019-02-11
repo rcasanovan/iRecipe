@@ -81,6 +81,8 @@ extension RecipesListPresenter: RecipesListPresenterDelegate {
         
         FavoriteRecipeManager.shared.save(title: recipeSelected.title, href: href, ingredients: recipeSelected.ingredients, thumbnail: thumbnail)
         
+        NotificationCenter.default.post(name: .reloadFavoriteRecipes, object: nil)
+        
         view?.showMessageWith(title: "🥘🥗🌮🥧", message: "This recipe has been saved as favorite", actionTitle: "Accept")
     }
     

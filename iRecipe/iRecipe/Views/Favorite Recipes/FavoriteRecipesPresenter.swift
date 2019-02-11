@@ -25,7 +25,15 @@ class FavoriteRecipesPresenter {
 
 extension FavoriteRecipesPresenter {
     
-    private func getFavoriteRecipes() {
+    private func addObservers() {
+        NotificationCenter.default.addObserver(self, selector: #selector(getFavoriteRecipes), name: .reloadFavoriteRecipes, object: nil)
+    }
+    
+}
+
+extension FavoriteRecipesPresenter {
+    
+    @objc private func getFavoriteRecipes() {
         let favoriteRecipes = interactor.getFavoriteRecipes()
         view?.loadRecipes(favoriteRecipes)
     }
@@ -36,6 +44,7 @@ extension FavoriteRecipesPresenter: FavoriteRecipesPresenterDelegate {
     
     func viewDidLoad() {
         getFavoriteRecipes()
+        addObservers()
     }
     
     func refresh() {

@@ -63,6 +63,7 @@
 		C81F2B1B2210806C0037478A /* FavoriteRecipesDatasource.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F2B1A2210806C0037478A /* FavoriteRecipesDatasource.swift */; };
 		C81F2B1E221080F10037478A /* FavoriteRecipeTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = C81F2B1C221080F10037478A /* FavoriteRecipeTableViewCell.swift */; };
 		C81F2B1F221080F10037478A /* FavoriteRecipeTableViewCell.xib in Resources */ = {isa = PBXBuildFile; fileRef = C81F2B1D221080F10037478A /* FavoriteRecipeTableViewCell.xib */; };
+		C89D8C4E22117A22001256B3 /* InternalNotifications.swift in Sources */ = {isa = PBXBuildFile; fileRef = C89D8C4D22117A22001256B3 /* InternalNotifications.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -140,6 +141,7 @@
 		C81F2B1A2210806C0037478A /* FavoriteRecipesDatasource.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipesDatasource.swift; sourceTree = "<group>"; };
 		C81F2B1C221080F10037478A /* FavoriteRecipeTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FavoriteRecipeTableViewCell.swift; sourceTree = "<group>"; };
 		C81F2B1D221080F10037478A /* FavoriteRecipeTableViewCell.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = FavoriteRecipeTableViewCell.xib; sourceTree = "<group>"; };
+		C89D8C4D22117A22001256B3 /* InternalNotifications.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InternalNotifications.swift; sourceTree = "<group>"; };
 		E446755234F54F6900B04C6E /* Pods_iRecipeTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_iRecipeTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		E507A7E6C5B962ACFDEDFE76 /* Pods-iRecipe.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-iRecipe.release.xcconfig"; path = "Pods/Target Support Files/Pods-iRecipe/Pods-iRecipe.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -200,6 +202,7 @@
 			children = (
 				C81F2A86220D94930037478A /* iRecipe-Bridging-Header.h */,
 				C8070CAA220CD9BF002F518E /* AppDelegate.swift */,
+				C89D8C4C22117A0E001256B3 /* Utils */,
 				C81F2AAE220DA0B30037478A /* Views */,
 				C81F2A87220D96430037478A /* Network */,
 				C81F2A7F220D941C0037478A /* Managers */,
@@ -531,6 +534,14 @@
 			path = Cell;
 			sourceTree = "<group>";
 		};
+		C89D8C4C22117A0E001256B3 /* Utils */ = {
+			isa = PBXGroup;
+			children = (
+				C89D8C4D22117A22001256B3 /* InternalNotifications.swift */,
+			);
+			path = Utils;
+			sourceTree = "<group>";
+		};
 		DBC72D44F81AC289B4C74977 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -786,6 +797,7 @@
 				C81F2ACC220DBCC30037478A /* UIColor.swift in Sources */,
 				C81F2AE7220DC2FF0037478A /* RecipesListPresenter.swift in Sources */,
 				C81F2AC5220DBAF70037478A /* BaseViewController.swift in Sources */,
+				C89D8C4E22117A22001256B3 /* InternalNotifications.swift in Sources */,
 				C81F2AF2220DC6270037478A /* UIView.swift in Sources */,
 				C81F2AA5220D9A180037478A /* RecipesRequest.swift in Sources */,
 				C81F2B1222107DAF0037478A /* FavoriteRecipesViewController.swift in Sources */,
