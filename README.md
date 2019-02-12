@@ -92,7 +92,7 @@ Reference: [Apple documentation](https://developer.apple.com/documentation/swift
 
 ## Third-Party Libraries
 
-* [RealmSwift](https://github.com/realm/realm-cocoa) (3.13.1): A mobile database that runs directly inside phones, tablets or wearables
+* [RealmSwift](https://github.com/realm/realm-cocoa) (3.13.1): A mobile database that runs directly inside phones, tablets or wearables.
 * [SVProgressHUD](https://github.com/SVProgressHUD/SVProgressHUD) (2.2.5): A clean and lightweight progress HUD for your iOS and tvOS app.
 * [Haneke](https://github.com/Haneke/Haneke) (1.0): A lightweight zero-config image cache for iOS, in Objective-C.
 
