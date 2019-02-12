@@ -108,6 +108,18 @@ Reference: [Realm](https://realm.io/docs/swift/latest)
 
 ## How it looks like?
 
+### Recipes list && search
+![alt tag](https://github.com/rcasanovan/iRecipe/blob/master/Images/01.PNG?raw=true)
+![alt tag](https://github.com/rcasanovan/iRecipe/blob/master/Images/02.PNG?raw=true)
+
+### Favorite recipes
+![alt tag](https://github.com/rcasanovan/iRecipe/blob/master/Images/03.PNG?raw=true)
+![alt tag](https://github.com/rcasanovan/iRecipe/blob/master/Images/04.PNG?raw=true)
+![alt tag](https://github.com/rcasanovan/iRecipe/blob/master/Images/05.PNG?raw=true)
+
+### No internet connection screen
+![alt tag](https://github.com/rcasanovan/iHealth/blob/master/Images/05.PNG?raw=true)
+
 ### iPad
 ![alt tag](https://github.com/rcasanovan/iRecipe/blob/master/Images/iPad01.png?raw=true)
 ![alt tag](https://github.com/rcasanovan/iRecipe/blob/master/Images/iPad02.png?raw=true)
