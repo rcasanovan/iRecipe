@@ -82,3 +82,26 @@ public struct RecipeResponse: Decodable {
 I'm using a Swift Standard Library decodable functionality in order to manage a type that can decode itself from an external representation (I really ❤ this from Swift).
 
 Reference: [Apple documentation](https://developer.apple.com/documentation/swift/swift_standard_library/encoding_decoding_and_serialization)
+
+## Programming languages && Development tools
+
+* Swift 4.2
+* Xcode 10.1
+* [Cocoapods](https://cocoapods.org) 1.5.3
+* Minimun iOS version: 12.1
+
+## Third-Party Libraries
+
+* [RealmSwift](https://github.com/realm/realm-cocoa) (3.7.6): A mobile database that runs directly inside phones, tablets or wearables
+* [SVProgressHUD](https://github.com/SVProgressHUD/SVProgressHUD) (2.2.5): A clean and lightweight progress HUD for your iOS and tvOS app.
+* [Haneke](https://github.com/Haneke/Haneke) (1.0): A lightweight zero-config image cache for iOS, in Objective-C.
+
+## Support && contact
+
+### Email
+
+You can contact me using my email: ricardo.casanova@outlook.com
+
+### Twitter
+
+Follow me [@rcasanovan](http://twitter.com/rcasanovan) on twitter.
