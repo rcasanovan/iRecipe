@@ -83,6 +83,29 @@ I'm using a Swift Standard Library decodable functionality in order to manage a 
 
 Reference: [Apple documentation](https://developer.apple.com/documentation/swift/swift_standard_library/encoding_decoding_and_serialization)
 
+### Local favorite recipes data model
+
+This model is used for the local favorite recipe:
+
+```swift
+class FavoriteRecipe: Object {
+    @objc dynamic var recipeId: String?
+    @objc dynamic var title: String = ""
+    @objc dynamic var href: String = ""
+    @objc dynamic var ingredients: String = ""
+    @objc dynamic var thumbnail: String = ""
+    @objc dynamic var timestamp: TimeInterval = NSDate().timeIntervalSince1970
+    
+    override class func primaryKey() -> String? {
+        return "recipeId"
+    }
+}
+```
+
+As I'm using Realm for this it's important to define a class to manage each model in the database. In this case we only have one model (FavoriteRecipe)
+
+Reference: [Realm](https://realm.io/docs/swift/latest)
+
 ## Programming languages && Development tools
 
 * Swift 4.2
