@@ -106,6 +106,12 @@ As I'm using Realm for this it's important to define a class to manage each mode
 
 Reference: [Realm](https://realm.io/docs/swift/latest)
 
+## How it looks like?
+
+### iPad
+![alt tag](https://github.com/rcasanovan/iRecipe/blob/master/Images/iPad01.PNG?raw=true)
+![alt tag](https://github.com/rcasanovan/iRecipe/blob/master/Images/iPad02.PNG?raw=true)
+
 ## Programming languages && Development tools
 
 * Swift 4.2
