@@ -118,7 +118,7 @@ Reference: [Realm](https://realm.io/docs/swift/latest)
 ![alt tag](https://github.com/rcasanovan/iRecipe/blob/master/Images/05.png?raw=true)
 
 ### No internet connection screen
-![alt tag](https://github.com/rcasanovan/iHealth/blob/master/Images/06.png?raw=true)
+![alt tag](https://github.com/rcasanovan/iRecipe/blob/master/Images/06.png?raw=true)
 
 ### iPad
 ![alt tag](https://github.com/rcasanovan/iRecipe/blob/master/Images/iPad01.png?raw=true)
