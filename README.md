@@ -8,3 +8,77 @@ This is a simple iOS app to search recipes using recipe puppy API.
 References:
 * [Viper architecture](https://www.objc.io/issues/13-architecture/viper/)
 * [Viper for iOS](https://medium.com/@smalam119/viper-design-pattern-for-ios-application-development-7a9703902af6)
+
+## How did I implement VIPER?
+
+Basically I have a protocol file for each scene in the app. This file defines the interaction between each layer as following:
+
+* View - Presenter: protocols to notify changes and to inject information to the UI.
+* Presenter - Interactor: protocols to request / receive information to / from the interactor.
+* Presenter - Router: protocol to define the transitions between scenes.
+
+Whith this protocols file is really easy to know how each layer notify / request / information to the other ones so we don't have any other way to communicate all the layers.
+
+Another important point is because I'm using protocols it's really easy to define mocks views / presenters / interactors / routers for testing.
+
+```swift
+// View / Presenter
+protocol RecipesListViewInjection : class {
+    func showProgress(_ show: Bool, status: String)
+    func showProgress(_ show: Bool)
+    func showMessageWith(title: String, message: String, actionTitle: String)
+    func loadRecipes(_ viewModels: [RecipeViewModel], fromBeginning: Bool)
+}
+
+protocol RecipesListPresenterDelegate : class {
+    func viewDidLoad()
+    func searchRecipe(_ recipe: String?)
+    func recipeSelectedAt(_ index: Int)
+    func makeFavoriteSelectedAt(_ index: Int)
+    func loadMoreRecipes()
+}
+
+// Presenter / Interactor
+
+typealias RecipesGetRecipesCompletionBlock = (_ viewModel: [RecipeViewModel]?, _ success: Bool, _ error: ResultError?) -> Void
+
+protocol RecipesListInteractorDelegate : class {
+    func getRecipeList(search: String?, completion: @escaping RecipesGetRecipesCompletionBlock)
+    func clear()
+    func getRecipeSelectedAt(_ index: Int) -> RecipeViewModel?
+}
+
+// Presenter / Router
+protocol RecipesListRouterDelegate : class {
+    func showRecipeDetailWithUrl(_ url: URL)
+}
+```
+
+## First at all. Where is the data came from?
+
+I'm using the api from the free API called Recipe Puppy. You can check the API [here](http://www.recipepuppy.com/about/api/).
+
+## Data models
+
+### Network data models
+
+```swift
+public struct RecipesResponse: Decodable {
+    
+    let results: [RecipeResponse]
+    
+}
+
+public struct RecipeResponse: Decodable {
+    
+    let title: String
+    let href: String
+    let ingredients: String
+    let thumbnail: String
+    
+}
+```
+
+I'm using a Swift Standard Library decodable functionality in order to manage a type that can decode itself from an external representation (I really ❤ this from Swift).
+
+Reference: [Apple documentation](https://developer.apple.com/documentation/swift/swift_standard_library/encoding_decoding_and_serialization)
