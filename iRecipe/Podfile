@@ -11,7 +11,7 @@ def iRecipePods
     pod 'SVProgressHUD', '~> 2.2.5'
     
     #Realm
-    pod 'RealmSwift', '~> 3.7.6'
+    pod 'RealmSwift', '~> 3.13.1'
     
     #Haneke
     pod 'Haneke', '~> 1.0'

@@ -1,15 +1,15 @@
 PODS:
   - Haneke (1.0.2)
-  - Realm (3.7.6):
-    - Realm/Headers (= 3.7.6)
-  - Realm/Headers (3.7.6)
-  - RealmSwift (3.7.6):
-    - Realm (= 3.7.6)
+  - Realm (3.13.1):
+    - Realm/Headers (= 3.13.1)
+  - Realm/Headers (3.13.1)
+  - RealmSwift (3.13.1):
+    - Realm (= 3.13.1)
   - SVProgressHUD (2.2.5)
 
 DEPENDENCIES:
   - Haneke (~> 1.0)
-  - RealmSwift (~> 3.7.6)
+  - RealmSwift (~> 3.13.1)
   - SVProgressHUD (~> 2.2.5)
 
 SPEC REPOS:
@@ -21,10 +21,10 @@ SPEC REPOS:
 
 SPEC CHECKSUMS:
   Haneke: 01454a67322faa0dd9d81fc0f447885044e71521
-  Realm: 9eaecad54712d6246d08ba34c10f354e4715d7d3
-  RealmSwift: 1fe08b4ebaeeaacf17f9ba0343f7b25c9fc31fa6
+  Realm: 50071da38fe079e0735e47c9f2eae738c68c5996
+  RealmSwift: 8a1e6a02b7a08cd17a31e3115143fb69fe5f3fb9
   SVProgressHUD: 1428aafac632c1f86f62aa4243ec12008d7a51d6
 
-PODFILE CHECKSUM: 26462a946128262a6941be093a6e25317136f23c
+PODFILE CHECKSUM: 581a62b261af35634ceff759445b0a902dff79a8
 
 COCOAPODS: 1.5.3
