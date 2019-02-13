@@ -102,6 +102,7 @@ extension RecipeCollectionViewCell {
         
         recipeIngredientsLabel.textColor = .white()
         recipeIngredientsLabel.font = UIFont.mediumWithSize(size: 14.0)
+        recipeIngredientsLabel.numberOfLines = 0
         
         makeFavoriteButton.backgroundColor = .green()
         makeFavoriteButton.titleLabel?.font = UIFont.blackWithSize(size: 14.0)
@@ -133,8 +134,6 @@ extension RecipeCollectionViewCell {
     private func configureRecipe() {
         recipeTitleLabel.text = viewModel?.title
         recipeIngredientsLabel.text = viewModel?.ingredients
-        recipeIngredientsLabel.numberOfLines = 0
-        recipeIngredientsLabel.sizeToFit()
         configureRecipeImageWithUrl(viewModel?.recipeUrl)
         if let hasLactose = viewModel?.hasLactose {
             hasLactoseLabel.isHidden = !hasLactose
