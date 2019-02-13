@@ -10,6 +10,9 @@ import UIKit
 
 class FavoriteRecipeTableViewCell: UITableViewCell {
 
+    /**
+     * Identifier for reusable cells
+     */
     static public var identifier: String {
         return String(describing: self)
     }
@@ -39,6 +42,13 @@ class FavoriteRecipeTableViewCell: UITableViewCell {
         hasLactoseLabel.isHidden = true
     }
     
+    /**
+     * Bind the cell using the view model
+     *
+     * - parameters:
+     *      -viewModel: the view model to bind the cell
+     *      -index: index for each cell
+     */
     public func bindWithViewModel(_ viewModel: RecipeViewModel, at index: Int) {
         self.index = index
         self.viewModel = viewModel
@@ -84,8 +94,12 @@ extension FavoriteRecipeTableViewCell {
     
 }
 
+// MARK: - Cell configuration
 extension FavoriteRecipeTableViewCell {
     
+    /**
+     * Configure the recipe information using the view model
+     */
     private func configureRecipe() {
         recipeTitleLabel.text = viewModel?.title
         recipeIngredientsLabel.text = viewModel?.ingredients
@@ -96,6 +110,9 @@ extension FavoriteRecipeTableViewCell {
         }
     }
     
+    /**
+     * Configure the recipe image
+     */
     private func configureRecipeImageWithUrl(_ url: URL?) {
         guard let url = url else {
             return

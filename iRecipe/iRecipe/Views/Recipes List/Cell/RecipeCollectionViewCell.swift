@@ -127,6 +127,7 @@ extension RecipeCollectionViewCell {
     
 }
 
+// MARK: - Cell configuration
 extension RecipeCollectionViewCell {
     
     private func configureRecipe() {
@@ -156,6 +157,7 @@ extension RecipeCollectionViewCell {
     
 }
 
+// MARK: - User actions
 extension RecipeCollectionViewCell {
     
     @objc private func makeFavoritePressed() {
