@@ -14,8 +14,10 @@ class RecipesListViewController: BaseViewController {
     
     private let customTitleView: CustomTitleView = CustomTitleView()
     private let searchView: SearchView = SearchView()
+    private let noResultsLabel: UILabel = UILabel()
     private let recipesListContainerView: UIView = UIView()
     private var recipesListCollectionView: UICollectionView?
+    
     private var datasource: RecipesListDatasource?
     private var totalRecipes: Int = 0
     private var isLoadingNextPage: Bool = false
@@ -52,6 +54,12 @@ extension RecipesListViewController {
      * ConfigureSubviews
      */
     private func configureSubviews() {
+        noResultsLabel.font = UIFont.mediumWithSize(size: 14.0)
+        noResultsLabel.textColor = .white()
+        noResultsLabel.text = "No results. Please try again"
+        noResultsLabel.textAlignment = .center
+        noResultsLabel.isHidden = true
+        
         let flowLayout = UICollectionViewFlowLayout()
         flowLayout.scrollDirection = .vertical
         flowLayout.estimatedItemSize = CGSize(width: getPostCellSide(), height: 320.0)
@@ -122,6 +130,14 @@ extension RecipesListViewController {
     private func addSubviews() {
         view.addSubview(searchView)
         view.addSubview(recipesListContainerView)
+        recipesListContainerView.addSubview(noResultsLabel)
+        
+        let noResultsLabelCenterX = NSLayoutConstraint(item: noResultsLabel, attribute: .centerX, relatedBy: .equal, toItem: recipesListContainerView, attribute: .centerX, multiplier: 1.0, constant: 0.0)
+        recipesListContainerView.addConstraint(noResultsLabelCenterX)
+        let noResultsLabelCenterY = NSLayoutConstraint(item: noResultsLabel, attribute: .centerY, relatedBy: .equal, toItem: recipesListContainerView, attribute: .centerY, multiplier: 1.0, constant: 0.0)
+        recipesListContainerView.addConstraint(noResultsLabelCenterY)
+        recipesListContainerView.addConstraintsWithFormat("H:|[v0]|", views: noResultsLabel)
+        recipesListContainerView.addConstraintsWithFormat("V:[v0(17.0)]", views: noResultsLabel)
         
         view.addConstraintsWithFormat("H:|[v0]|", views: searchView)
         view.addConstraintsWithFormat("V:|[v0(\(searchView.height))]", views: searchView)
@@ -213,6 +229,9 @@ extension RecipesListViewController: RecipesListViewInjection {
         isLoadingNextPage = false
         datasource?.items = viewModels
         recipesListCollectionView?.reloadData()
+        
+        recipesListCollectionView?.isHidden = viewModels.isEmpty
+        noResultsLabel.isHidden = !viewModels.isEmpty
     }
     
 }
