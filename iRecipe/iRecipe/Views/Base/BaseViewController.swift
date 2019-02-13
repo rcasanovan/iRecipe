@@ -10,6 +10,13 @@ import UIKit
 
 class BaseViewController: UIViewController {
     
+    /**
+     * Show the loader
+     *
+     * - parameters:
+     *      -show: show / hide the loader
+     *      -status: message included in the loader (optional)
+     */
     public func showLoader(_ show: Bool, status: String? = nil) {
         if let status = status {
             show == true ? SVProgressHUD.show(withStatus: status) : SVProgressHUD.dismiss()
@@ -18,15 +25,11 @@ class BaseViewController: UIViewController {
         show == true ? SVProgressHUD.show() : SVProgressHUD.dismiss()
     }
     
-}
-
-extension BaseViewController {
-    
     /**
      * Show alert
      *
      * - parameters:
-     *      -title: title for the aler
+     *      -title: title for the alert
      *      -message: message for the alert
      *      -actionTitle: action title for the alert
      */
