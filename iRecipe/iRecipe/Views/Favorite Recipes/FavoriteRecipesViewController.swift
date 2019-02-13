@@ -13,6 +13,7 @@ class FavoriteRecipesViewController: BaseViewController {
     public var presenter: FavoriteRecipesPresenterDelegate?
     
     private let customTitleView: CustomTitleView = CustomTitleView()
+    private let noFavoriteRecipesLabel: UILabel = UILabel()
     private let favoriteRecipesContainerView: UIView = UIView()
     private var favoriteRecipesTableView: UITableView?
     private var datasource: FavoriteRecipesDatasource?
@@ -45,6 +46,12 @@ extension FavoriteRecipesViewController {
      * ConfigureSubviews
      */
     private func configureSubviews() {
+        noFavoriteRecipesLabel.font = UIFont.mediumWithSize(size: 14.0)
+        noFavoriteRecipesLabel.textColor = .white()
+        noFavoriteRecipesLabel.text = "No favorite recipes :("
+        noFavoriteRecipesLabel.textAlignment = .center
+        noFavoriteRecipesLabel.isHidden = true
+        
         favoriteRecipesContainerView.backgroundColor = .clear
         favoriteRecipesTableView = UITableView(frame: favoriteRecipesContainerView.bounds, style: .plain)
         favoriteRecipesTableView?.tableFooterView = UIView()
@@ -97,6 +104,14 @@ extension FavoriteRecipesViewController {
      */
     private func addSubviews() {
         view.addSubview(favoriteRecipesContainerView)
+        favoriteRecipesContainerView.addSubview(noFavoriteRecipesLabel)
+        
+        let noFavoriteRecipesLabelCenterX = NSLayoutConstraint(item: noFavoriteRecipesLabel, attribute: .centerX, relatedBy: .equal, toItem: favoriteRecipesContainerView, attribute: .centerX, multiplier: 1.0, constant: 0.0)
+        favoriteRecipesContainerView.addConstraint(noFavoriteRecipesLabelCenterX)
+        let noFavoriteRecipesLabelCenterY = NSLayoutConstraint(item: noFavoriteRecipesLabel, attribute: .centerY, relatedBy: .equal, toItem: favoriteRecipesContainerView, attribute: .centerY, multiplier: 1.0, constant: 0.0)
+        favoriteRecipesContainerView.addConstraint(noFavoriteRecipesLabelCenterY)
+        favoriteRecipesContainerView.addConstraintsWithFormat("H:|[v0]|", views: noFavoriteRecipesLabel)
+        favoriteRecipesContainerView.addConstraintsWithFormat("V:[v0(17.0)]", views: noFavoriteRecipesLabel)
         
         view.addConstraintsWithFormat("H:|[v0]|", views: favoriteRecipesContainerView)
         view.addConstraintsWithFormat("V:|[v0]|", views: favoriteRecipesContainerView)
@@ -133,6 +148,9 @@ extension FavoriteRecipesViewController: FavoriteRecipesViewInjection {
         refreshControl.endRefreshing()
         datasource?.favoriteRecipes = viewModels
         favoriteRecipesTableView?.reloadData()
+        
+        favoriteRecipesTableView?.isHidden = viewModels.isEmpty
+        noFavoriteRecipesLabel.isHidden = !viewModels.isEmpty
     }
     
 }
