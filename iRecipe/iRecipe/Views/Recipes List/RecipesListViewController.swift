@@ -122,6 +122,10 @@ extension RecipesListViewController {
             static let percentagePosition: Double = 75.0
         }
         
+        struct NoResultsLabel {
+            static let height: CGFloat = 17.0
+        }
+        
     }
     
     /**
@@ -137,7 +141,7 @@ extension RecipesListViewController {
         let noResultsLabelCenterY = NSLayoutConstraint(item: noResultsLabel, attribute: .centerY, relatedBy: .equal, toItem: recipesListContainerView, attribute: .centerY, multiplier: 1.0, constant: 0.0)
         recipesListContainerView.addConstraint(noResultsLabelCenterY)
         recipesListContainerView.addConstraintsWithFormat("H:|[v0]|", views: noResultsLabel)
-        recipesListContainerView.addConstraintsWithFormat("V:[v0(17.0)]", views: noResultsLabel)
+        recipesListContainerView.addConstraintsWithFormat("V:[v0(\(Layout.NoResultsLabel.height))]", views: noResultsLabel)
         
         view.addConstraintsWithFormat("H:|[v0]|", views: searchView)
         view.addConstraintsWithFormat("V:|[v0(\(searchView.height))]", views: searchView)

@@ -97,6 +97,10 @@ extension FavoriteRecipesViewController {
     
     private struct Layout {
         
+        struct NoFavoriteRecipesLabel {
+            static let height: CGFloat = 17.0
+        }
+        
     }
     
     /**
@@ -111,7 +115,7 @@ extension FavoriteRecipesViewController {
         let noFavoriteRecipesLabelCenterY = NSLayoutConstraint(item: noFavoriteRecipesLabel, attribute: .centerY, relatedBy: .equal, toItem: favoriteRecipesContainerView, attribute: .centerY, multiplier: 1.0, constant: 0.0)
         favoriteRecipesContainerView.addConstraint(noFavoriteRecipesLabelCenterY)
         favoriteRecipesContainerView.addConstraintsWithFormat("H:|[v0]|", views: noFavoriteRecipesLabel)
-        favoriteRecipesContainerView.addConstraintsWithFormat("V:[v0(17.0)]", views: noFavoriteRecipesLabel)
+        favoriteRecipesContainerView.addConstraintsWithFormat("V:[v0(\(Layout.NoFavoriteRecipesLabel.height))]", views: noFavoriteRecipesLabel)
         
         view.addConstraintsWithFormat("H:|[v0]|", views: favoriteRecipesContainerView)
         view.addConstraintsWithFormat("V:|[v0]|", views: favoriteRecipesContainerView)
