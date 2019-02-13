@@ -82,10 +82,18 @@ extension RecipeViewModel {
     private static func getFavoriteRecipeViewModelWith(_ recipe: FavoriteRecipe) -> RecipeViewModel {
         
         let hasLactose = RecipeManager.shared.containsLactoseWith(recipe.ingredients)
-        let recipeUrl = URL(string: recipe.thumbnail)
-        let href = URL(string: recipe.href)
         
-        return RecipeViewModel(title: recipe.title, ingredients: recipe.ingredients, recipeUrl: recipeUrl, href: href, hasLactose: hasLactose)
+        var recipeUrl: URL?
+        if let thumbnail = recipe.thumbnail {
+            recipeUrl = URL(string: thumbnail)
+        }
+        
+        var recipeHref: URL?
+        if let href = recipe.href {
+            recipeHref = URL(string: href)
+        }
+
+        return RecipeViewModel(title: recipe.title, ingredients: recipe.ingredients, recipeUrl: recipeUrl, href: recipeHref, hasLactose: hasLactose)
     }
     
 }

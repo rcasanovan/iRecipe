@@ -75,11 +75,11 @@ extension RecipesListPresenter: RecipesListPresenterDelegate {
     }
     
     func makeFavoriteSelectedAt(_ index: Int) {
-        guard let recipeSelected = interactor.getRecipeSelectedAt(index), let href = recipeSelected.href?.absoluteString, let thumbnail = recipeSelected.recipeUrl?.absoluteString  else {
+        guard let recipeSelected = interactor.getRecipeSelectedAt(index) else {
             return
         }
         
-        FavoriteRecipeManager.shared.save(title: recipeSelected.title, href: href, ingredients: recipeSelected.ingredients, thumbnail: thumbnail)
+        FavoriteRecipeManager.shared.save(title: recipeSelected.title, href: recipeSelected.href, ingredients: recipeSelected.ingredients, thumbnail: recipeSelected.recipeUrl)
         
         NotificationCenter.default.post(name: .reloadFavoriteRecipes, object: nil)
         

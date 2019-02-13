@@ -45,7 +45,7 @@ extension RecipeDetailViewController {
     private func configureSubviews() {
         // Create a WKWebView and add it to the view
         webView = WKWebView()
-//        webView?.navigationDelegate = self
+        webView?.navigationDelegate = self
         webView?.scrollView.contentInset = UIEdgeInsets(top: 0, left: 0, bottom: 0, right: 0)
     }
     
@@ -95,24 +95,17 @@ extension RecipeDetailViewController {
 }
 
 // MARK: WKWebView navigation delegate
-//extension RecipeDetailViewController: WKNavigationDelegate {
-//    func webView(_ webView: WKWebView, didStartProvisionalNavigation navigation: WKNavigation!) {
-//        showLoader(true)
-//    }
-//
-//    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
-//        showLoader(false)
-//    }
-//
-//    func webView(_ webView: WKWebView, didFinish navigation: WKNavigation!) {
-//        showLoader(false)
-//    }
-//
-//    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
-//        showLoader(false)
-//    }
-//
-//}
+extension RecipeDetailViewController: WKNavigationDelegate {
+
+    func webView(_ webView: WKWebView, didFailProvisionalNavigation navigation: WKNavigation!, withError error: Error) {
+        showAlertWith(title: "Error", message: "It seems we can't load the recipe. Maybe the url is not available :(", actionTitle: "Accept")
+    }
+
+    func webView(_ webView: WKWebView, didFail navigation: WKNavigation!, withError error: Error) {
+        showAlertWith(title: "Error", message: "It seems we can't load the recipe. Maybe the url is not available :(", actionTitle: "Accept")
+    }
+
+}
 
 extension RecipeDetailViewController: RecipeDetailViewInjection {
     

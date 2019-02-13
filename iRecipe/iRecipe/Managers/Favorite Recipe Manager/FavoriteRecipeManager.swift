@@ -13,15 +13,15 @@ class FavoriteRecipeManager: NSObject {
     
     static let shared: FavoriteRecipeManager = { return FavoriteRecipeManager() }()
     
-    public func save(title: String, href: String, ingredients: String, thumbnail: String) {
+    public func save(title: String, href: URL?, ingredients: String, thumbnail: URL?) {
         if favoriteRecipeExists(title) { return }
         
         let favoriteRecipe = FavoriteRecipe()
         favoriteRecipe.recipeId = UUID().uuidString
         favoriteRecipe.title = title
-        favoriteRecipe.href = href
+        favoriteRecipe.href = href?.absoluteString
         favoriteRecipe.ingredients = ingredients
-        favoriteRecipe.thumbnail = thumbnail
+        favoriteRecipe.thumbnail = thumbnail?.absoluteString
         
         // Get the default Realm
         let realm = try! Realm()

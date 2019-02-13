@@ -12,9 +12,9 @@ import RealmSwift
 class FavoriteRecipe: Object {
     @objc dynamic var recipeId: String?
     @objc dynamic var title: String = ""
-    @objc dynamic var href: String = ""
+    @objc dynamic var href: String?
     @objc dynamic var ingredients: String = ""
-    @objc dynamic var thumbnail: String = ""
+    @objc dynamic var thumbnail: String?
     @objc dynamic var timestamp: TimeInterval = NSDate().timeIntervalSince1970
     
     override class func primaryKey() -> String? {

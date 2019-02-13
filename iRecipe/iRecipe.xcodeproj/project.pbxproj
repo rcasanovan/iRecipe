@@ -607,8 +607,8 @@
 			isa = PBXGroup;
 			children = (
 				C89D8C77221363CE001256B3 /* GeneralMessageProtocols.swift */,
-				C89D8C78221363CE001256B3 /* GeneralMessagePresenter.swift */,
 				C89D8C79221363CE001256B3 /* GeneralMessageViewController.swift */,
+				C89D8C78221363CE001256B3 /* GeneralMessagePresenter.swift */,
 			);
 			path = "General Message";
 			sourceTree = "<group>";

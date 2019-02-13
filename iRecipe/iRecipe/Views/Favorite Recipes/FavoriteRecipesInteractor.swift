@@ -40,7 +40,10 @@ extension FavoriteRecipesInteractor: FavoriteRecipesInteractorDelegate {
         if !favoriteRecipes.indices.contains(index) { return nil }
         
         let recipe = favoriteRecipes[index]
-        return URL(string: recipe.href)
+        guard let href = recipe.href, let url = URL(string: href) else {
+            return nil
+        }
+        return url
     }
     
 }
