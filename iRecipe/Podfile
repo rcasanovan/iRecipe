@@ -4,8 +4,6 @@ platform :ios, '12.0'
 use_frameworks!
 inhibit_all_warnings!
 
-#link_with 'iRecipe', 'iRecipeTests'
-
 def iRecipePods
     #SVProgressHUD
     pod 'SVProgressHUD', '~> 2.2.5'
@@ -22,5 +20,9 @@ target 'iRecipe' do
 end
 
 target 'iRecipeTests' do
+    iRecipePods
+end
+
+target 'iRecipeUITests' do
     iRecipePods
 end
