@@ -130,8 +130,9 @@ Reference: [Realm](https://realm.io/docs/swift/latest)
 
 ## What's left in the demo?
 
-* *Realm migration process*: It would be nice to add a process to migrate the realm database to a new model (just in case you need to add a new field into the database).
+* Realm migration process: It would be nice to add a process to migrate the realm database to a new model (just in case you need to add a new field into the database).
 * Localizable strings files: I didn't add localizable strings files because the API can't return the recipes using translations (en, es, etc). It would be nice to have the option to send the device language in the url in order to get the recipes in defferent languages (and to add the localizable strings files too).
+* Icons (app / tabbar): I didn't add any icon for the app or the tabbar. It would be nice to add the icons for the app in the future.
 
 ## Programming languages && Development tools
 
