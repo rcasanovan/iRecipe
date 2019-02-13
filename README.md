@@ -128,6 +128,11 @@ Reference: [Realm](https://realm.io/docs/swift/latest)
 ![alt tag](https://github.com/rcasanovan/iRecipe/blob/master/Images/iPad01.png?raw=true)
 ![alt tag](https://github.com/rcasanovan/iRecipe/blob/master/Images/iPad02.png?raw=true)
 
+## What's left in the demo?
+
+* Realm migration process: It would be nice to add a process to migrate the realm database to a new model (just in case you need to add a new field into the database).
+* Localizable strings files: I didn't add localizable strings files because the API can't return the recipes using translations (en, es, etc). It would be nice to have the option to send the device language in the url in order to get the recipes in defferent languages (and to add the localizable strings files too).
+
 ## Programming languages && Development tools
 
 * Swift 4.2
