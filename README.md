@@ -120,6 +120,10 @@ Reference: [Realm](https://realm.io/docs/swift/latest)
 ### No internet connection screen
 ![alt tag](https://github.com/rcasanovan/iRecipe/blob/master/Images/06.png?raw=true)
 
+### No results
+![alt tag](https://github.com/rcasanovan/iRecipe/blob/master/Images/07.png?raw=true)
+![alt tag](https://github.com/rcasanovan/iRecipe/blob/master/Images/08.png?raw=true)
+
 ### iPad
 ![alt tag](https://github.com/rcasanovan/iRecipe/blob/master/Images/iPad01.png?raw=true)
 ![alt tag](https://github.com/rcasanovan/iRecipe/blob/master/Images/iPad02.png?raw=true)
