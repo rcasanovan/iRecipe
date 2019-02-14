@@ -2,6 +2,12 @@
 
 This is a simple iOS app to search recipes using recipe puppy API.
 
+## 🚨 Important note 🚨
+
+This project is using cocoapods and the pods are included in the repo. Anyway if you have any problem please run the **pod install** command.
+
+If you have any doubt about cocoapods you can check the reference [here](https://cocoapods.org).
+
 ## Project Architecture 
 ![alt tag](https://github.com/rcasanovan/iRecipe/blob/master/Images/projectArchitecture.jpeg?raw=true)
 
